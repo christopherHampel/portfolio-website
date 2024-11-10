@@ -1,0 +1,46 @@
+.marquee {
+    display: flex;
+    gap: 56px;
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    padding: 12px 32px;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: rotate(-3deg);
+    transform-origin: left center;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(5.300000190734863px);
+}
+
+.marquee-content {
+    display: flex;
+    align-items: center;
+    gap: 56px;
+    color: rgba(61, 207, 182, 1);
+    font-family: 'Karla';
+    font-size: 32px;
+    font-weight: 400;
+    position: relative;
+    top: 0;
+    left: 0;
+    >span {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        >img {
+            width: 6.4px;
+            height: 6.4px;
+        }
+    }
+    animation: moveSlideshow 15s linear infinite;
+}
+
+@keyframes moveSlideshow {
+    0% { 
+      transform: translateX(0);  
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+  }

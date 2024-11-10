@@ -1,0 +1,55 @@
+@import './../../../styles.scss';
+
+.contact-me {
+    padding: 144px 112px;
+    @include flexBox(row, flex-start, flex-start, 64px);
+}
+
+.description {
+    >h4 {
+        @include styleFont('Fira Code', 24px, 700, 28.8px, #3DCFB6);
+    }
+    >p {
+        @include styleFont('Karla', 16px, 700, 19.2px, #FFFF);
+    }
+}
+
+.last-paragraph {
+    >p {
+        @include styleFont('Karla', 16px, 700, 19.2px, #FFFF);
+        >span {
+            color: #3DCFB6;
+        }
+    }
+}
+
+.rightside-formular {
+    >form {
+        @include flexBox(column, center, center, 16px);
+        >div {
+            @include flexBox(column, flex-start, flex-start, 16px);
+            padding: 32px;
+            width: 616px;
+            border-top: 1px solid rgba(61, 207, 182, 1);
+            >label {
+                @include styleFont('Fira Code', 24px, 500, 28.8px, #3DCFB6);
+            }
+            >input, textarea {
+                background: none;
+                border: none;
+                outline: none;
+                width: 100%;
+                resize: none;
+                @include styleFont('Karla', 18px, 400, 21.6px, rgba(255, 255, 255));
+            }
+            >input::placeholder, textarea::placeholder {
+                @include styleFont('Karla', 18px, 400, 21.6px, rgba(255, 255, 255, 0.8));
+            }
+            
+        }
+    }
+}
+
+.border-bottom {
+    border-bottom: 1px solid rgba(61, 207, 182, 1);
+}

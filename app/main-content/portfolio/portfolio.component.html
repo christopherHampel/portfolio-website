@@ -1,0 +1,20 @@
+<section class="portfolio max-width">
+    <h2>Portfolio</h2>
+
+    <h3>Featured Projects</h3>
+
+    <span>Explore a selection of my work here - Interact with projects to see my skills in action.</span>
+
+    <div class="portfolio-menu">
+        <div>
+            @for (project of currentProjects; track $index) {
+                <app-project
+                    projectName="{{ project.projectName }}" 
+                    projectSkills="{{ project.projectSkills }}"
+                    projectImage="{{ project.projectImage }}"
+                    [isFirstElement]="$index === 0">
+                </app-project>
+            }
+        </div>
+    </div>
+</section>

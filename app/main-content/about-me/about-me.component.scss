@@ -1,0 +1,66 @@
+@import './../../../styles.scss';
+
+section {
+    @include flexBox(row, space-between, flex-start, 0);
+    width: 1456.35px;
+    height: 996px;
+    padding: 144px 112px;
+    >div {
+        width: 568px;
+        height: 568px;
+    }
+}
+
+.declarations-about-me {
+    width: 568px;
+    padding-top: 98px;
+}
+
+.content-about-me {
+    @include flexBox(column, flex-start, flex-start, 32px);
+}
+
+.enumerations-about-me {
+    @include flexBox(column, flex-start, flex-start, 16px);
+    >div {
+        @include flexBox(row, flex-start, flex-start, 24px);
+        >img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
+
+.profile-container {
+    position: relative;
+    width: 568px;
+    height: 568px;
+}
+
+.profile-image {
+    position: absolute;
+    width: 568px;
+    height: 568px;
+    z-index: 1;
+    object-fit: cover;
+    border-radius: 30px;
+    transition: opacity 0.3s ease;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.profile-image-hover {
+    position: absolute;
+    width: 568px;
+    height: 568px;
+    top: 20px;
+    left: -20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-container:hover .profile-image-hover {
+    opacity: 1;
+    cursor: pointer;
+}

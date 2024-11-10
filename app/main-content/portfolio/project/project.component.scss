@@ -1,0 +1,62 @@
+@import './../../../../styles.scss';
+@import './../portfolio.component.scss';
+
+.project {
+    height: 109px;
+    display: flex;
+    align-items: center;
+    >div {
+        @include flexBox(row, space-between, center, 0);
+        >span {
+            @include styleFont('Fira Code', 24px, 700, 28.8px, #FFFF);
+        }
+    }
+}
+
+.required-skills {
+    >span{
+        @include styleFont('Karla', 18px, 400, 21.6px, #FFFF);
+    }
+}
+
+.project-description {
+    width: 880px;
+    padding: 40px 32px;
+    border-bottom: 1px solid #3DCFB6;
+}
+
+.first-project {
+    border-top: 1px solid #3DCFB6;
+}
+
+.hover-image {
+    padding-left: 80px;
+    width: 295px;
+    height: 192px;
+    opacity: 0;
+}
+
+.project:hover {
+    cursor: pointer;
+}
+
+.project:hover .hover-image {
+    opacity: 1;
+}
+
+.project-image {
+    position: absolute;
+    z-index: 1;
+}
+
+.project-image-bg {
+    position: relative;
+    top: 20px;
+    left: 23px;
+}
+
+dialogConfig {
+    position: absolute;
+    top: 100px;
+    left: 50px;
+}

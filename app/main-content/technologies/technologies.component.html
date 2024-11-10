@@ -1,0 +1,35 @@
+<section class="technologies max-width">
+
+    <div class="information-box declarations-skill-set">
+        <h2>Technologies</h2>
+
+        <div>
+            <h3>Skill Set</h3>
+
+            <div class="content-skillset">
+                <p class="font-karla-18">My journey has involved working on diverse projects, employing a range of frontend technologies and concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and stay ahead in the ever-evolving landscape of web development.</p>
+
+                <span>You need <span>another skill?</span></span>
+    
+                <p class="font-karla-16">Feel free to contact me. I look forward to expanding on my previous knowledge.</p>
+            </div>
+            <button class="main-button">Let's talk</button>
+        </div>
+    </div>
+
+    <div class="skill-set-icons">
+
+        @for (technology of technolgies; track $index) {
+            <div class="single-technology">
+                <img src='{{ technology.image }}'>
+                <span>{{ technology.description }}</span>
+            </div>
+        }
+
+        <!-- <div class="single-technology">
+            <img src="assets/img/growth_mindset_icon.png" alt="">
+            <span>Growth Mindset</span>
+        </div> -->
+    </div>
+
+</section>

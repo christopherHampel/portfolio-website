@@ -1,0 +1,18 @@
+<section>
+    <div class="carousel">    
+        <div class="box-container">
+            <div
+                *ngFor="let box of displayedBoxes; let i = index"
+                [class.active]="i === middleIndex"  
+                [class.red]="isRedBox(i)"
+                class="box">
+                {{ box.name }}
+            </div>
+        </div>
+
+        <div class="arrows">
+            <button class="arrow left" (click)="prev()">&#8592;</button>
+            <button class="arrow right" (click)="next()">&#8594;</button>
+        </div>
+    </div>
+</section>

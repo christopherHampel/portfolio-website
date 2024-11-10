@@ -1,0 +1,38 @@
+<section class="contact-me max-width">
+
+    <div class="leftside">
+        <h2>Contact me</h2>
+        <h3>Let's work together</h3>
+        <div class="description">
+            <h4>Got a problem to solve?</h4>
+            <p>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.</p>
+            <div class="last-paragraph">
+                <p> Need a Frontend developer? <span>Let’s talk!</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="rightside-formular">
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+
+            <div>
+                <label for="name">What's your name?</label>
+                <input [(ngModel)]="contactData.name" type="name" id="name" name="name" placeholder="Your name goes here" required>
+            </div>
+
+            <div>
+                <label for="email">What's your email?</label>
+                <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="youremail@email.com" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
+            </div>
+            
+            <div class="border-bottom">
+                <label for="message">How I can help you?</label>
+                <textarea [(ngModel)]="contactData.message" name="message" id="message" placeholder="Hello Lukas, I am interested in..." required></textarea>
+            </div>
+
+            <input type="submit" value="Submit">
+          
+        </form>
+    </div>
+
+</section>

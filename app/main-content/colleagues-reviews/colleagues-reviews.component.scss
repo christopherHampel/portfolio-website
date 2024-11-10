@@ -1,0 +1,78 @@
+// @import './../../../styles.scss';
+
+// p {
+//     @include styleFont('Fira Code', 32px, 700, 41.98px, #3DCFB6);
+//     text-align: center;
+// }
+
+// section {
+//     width: 1440px;
+//     margin: 0 auto;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+// }
+
+// .carousel-container {
+//     @include flexBox(column, center, center, 0);
+//     // >div {
+//     //     height: 274px;
+//     // }
+// }
+
+// .review-box {
+//     background-color: #3DCFB6;
+//     color: white;
+// }
+
+// .carousel {
+//     displaY: flex;
+// }
+
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.arrow {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.box-container {
+    display: flex;
+    gap: 60px;
+    width: 1440px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.box {
+    min-width: 700px;
+    height: 230px;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    // transition: all 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.box.active {
+    width: 600px;
+    height: 274px;
+    flex-shrink: 0;
+    // background-color: lightskyblue;
+}
+
+.red {
+    // background-color: red;
+}
