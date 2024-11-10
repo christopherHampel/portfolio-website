@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
@@ -10,11 +11,17 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class ContactMeComponent {
 
+  http = inject(HttpClient);
+
   contactData = {
     name: '',
     email: '',
     message: '',
   };
+
+  // onSubmit(contactForm: NgForm) {
+  //   console.log(contactForm);
+  // }
 
   mailTest = true;
 

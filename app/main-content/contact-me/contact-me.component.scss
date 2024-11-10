@@ -5,7 +5,15 @@
     @include flexBox(row, flex-start, flex-start, 64px);
 }
 
+.leftside {
+    @include flexBox(column, flex-start, flex-start, 40px);
+    >div {
+        @include flexBox(column, flex-start, flex-start, 20px);
+    }
+}
+
 .description {
+    @include flexBox(column, flex-start, flex-start, 16px);
     >h4 {
         @include styleFont('Fira Code', 24px, 700, 28.8px, #3DCFB6);
     }
@@ -52,4 +60,8 @@
 
 .border-bottom {
     border-bottom: 1px solid rgba(61, 207, 182, 1);
+}
+
+h2, h3, h4, p {
+    margin: 0;
 }

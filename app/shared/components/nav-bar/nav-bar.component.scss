@@ -1,0 +1,27 @@
+@import './../../../../styles.scss';
+
+nav {
+    height: 98px;
+    background-color: transparent;
+    @include flexBox(row, space-between, center, 0);
+}
+
+.toggle-language:hover {
+    cursor: pointer;
+}
+
+.links {
+    @include flexBox(row, flex-start, center, 24px);
+    >a {
+        @include styleFont('Fira Code', 20px, 400, 26.24px, #FFFF);
+        text-decoration: none;
+        letter-spacing: -3%;
+    }
+}
+
+
+// @media (max-width: 1440px) {
+//     nav {
+//         padding: 0 98px;
+//     }
+// }
