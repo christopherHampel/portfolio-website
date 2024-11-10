@@ -3,7 +3,7 @@
         <div class="box-container">
             <div
                 *ngFor="let box of displayedBoxes; let i = index"
-                [class.active]="i === middleIndex"  
+                [class.active]="i === middleIndex"
                 [class.red]="isRedBox(i)"
                 class="box">
                 {{ box.name }}

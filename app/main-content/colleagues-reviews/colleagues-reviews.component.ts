@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { ReviexBoxComponent } from "./reviex-box/reviex-box.component";
+import { ReviewBoxComponent } from "./review-box/review-box.component";
 
 @Component({
   selector: 'app-colleagues-reviews',
   standalone: true,
-  imports: [CarouselModule, ReviexBoxComponent, CommonModule],
+  imports: [ CommonModule ],
   templateUrl: './colleagues-reviews.component.html',
   styleUrl: './colleagues-reviews.component.scss'
 })
@@ -38,9 +38,6 @@ export class ColleaguesReviewsComponent{
       'review': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ratione itaque possimus provident. Adipisci voluptatibus aut nobis voluptate cumque architecto explicabo magnam nemo quas odit mollitia quo, molestias asperiores laborum?',
     },  
   ];
-
-  moveLeft = false;
-  moveRight = false;
   
   displayedBoxes: {name:string; review:string}[] = [];
   
@@ -76,10 +73,5 @@ export class ColleaguesReviewsComponent{
 
   isRedBox(i: number): boolean {
     return i === 0 || i === 2;
-  }
-
-  resetAnimationFlags(): void {
-    this.moveLeft = false;
-    this.moveRight = false;
   }
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReviexBoxComponent } from './reviex-box.component';
+import { ReviewBoxComponent } from './review-box.component';
 
-describe('ReviexBoxComponent', () => {
-  let component: ReviexBoxComponent;
-  let fixture: ComponentFixture<ReviexBoxComponent>;
+describe('ReviewBoxComponent', () => {
+  let component: ReviewBoxComponent;
+  let fixture: ComponentFixture<ReviewBoxComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReviexBoxComponent]
+      imports: [ReviewBoxComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ReviexBoxComponent);
+    fixture = TestBed.createComponent(ReviewBoxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
