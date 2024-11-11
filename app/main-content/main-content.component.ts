@@ -3,7 +3,7 @@ import { AboveTheFoldComponent } from './above-the-fold/above-the-fold.component
 import { AboutMeComponent } from './about-me/about-me.component';
 import { TechnologiesComponent } from './technologies/technologies.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-import { ColleaguesReviewsComponent } from './colleagues-reviews/colleagues-reviews.component';
+import { EvaluationComponent } from './evaluation/evaluation.component';
 import { FooterComponent } from '../shared/components/footer/footer.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
 import { NavBarComponent } from '../shared/components/nav-bar/nav-bar.component';
@@ -15,7 +15,7 @@ import { NavBarComponent } from '../shared/components/nav-bar/nav-bar.component'
               AboutMeComponent, 
               TechnologiesComponent, 
               PortfolioComponent, 
-              ColleaguesReviewsComponent, 
+              EvaluationComponent, 
               FooterComponent,
               ContactMeComponent,
               NavBarComponent,

@@ -1,0 +1,75 @@
+<div class="evaluations max-width">
+    <div>
+        <h2>What my colleagues say about me</h2>
+    </div>
+
+    <div class="evaluations-carousel">
+        <div>
+            @for (review of evaluations; track $index) {
+                <div class="review-box" 
+                [ngClass]="
+                {   'middle-box': $index === 1,
+                    'transform-right': moveRight,
+                }">
+                    <span>{{ review.review }}</span>
+                    <div class="review-author">
+                        <div></div>
+                        <span>{{ review.name }}</span>
+                    </div>
+                </div>
+
+                <div class="blur-effect"></div>
+            }
+        </div>
+    </div>
+
+    <div class="arrows-carousel">
+        <div>
+            <img (click)="previousEvaluation()" src="assets/img/arrow_back.png" alt="">
+        </div>
+        <div>
+            <img src="assets/img/Ellipse 3.png" alt="">
+            <img src="assets/img/Ellipse 3.png" alt="">
+            <img src="assets/img/Ellipse 3.png" alt="">
+        </div>
+        <img (click)="nextEvaluation()" src="assets/img/arrow_forward.png" alt="">
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section>
+    <div class="carousel">    
+        <div class="box-container">
+            <div
+                *ngFor="let review of displayedReviews; let i = index"
+                [class.active]="i === middleIndex"
+                [ngStyle]="animation ? {'transform': translateValues(i)} : {}"
+                class="box">
+                {{ review.name }}
+            </div>
+            <div class="overlap-blur-effect"></div>
+        </div>
+
+        <div class="arrows">
+            <button class="arrow left" (click)="prev()">&#8592;</button>
+            <button class="arrow right" (click)="next()">&#8594;</button>
+        </div>
+    </div>
+</section> -->
