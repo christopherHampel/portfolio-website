@@ -2,12 +2,13 @@
     <div class="carousel">    
         <div class="box-container">
             <div
-                *ngFor="let box of displayedBoxes; let i = index"
+                *ngFor="let review of displayedReviews; let i = index"
                 [class.active]="i === middleIndex"
-                [class.red]="isRedBox(i)"
+                [ngStyle]="animation ? {'transform': translateValues(i)} : {}"
                 class="box">
-                {{ box.name }}
+                {{ review.name }}
             </div>
+            <div class="overlap-blur-effect"></div>
         </div>
 
         <div class="arrows">

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { ReviewBoxComponent } from "./review-box/review-box.component";
+// import { CarouselModule } from 'ngx-bootstrap/carousel';
+// import { ReviewBoxComponent } from "./review-box/review-box.component";
 
 @Component({
   selector: 'app-colleagues-reviews',
@@ -11,6 +11,8 @@ import { ReviewBoxComponent } from "./review-box/review-box.component";
   styleUrl: './colleagues-reviews.component.scss'
 })
 export class ColleaguesReviewsComponent{
+
+  animation:boolean = false;
 
   boxes: {name:string; review:string}[] = [
     {
@@ -22,7 +24,7 @@ export class ColleaguesReviewsComponent{
       'review': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ratione itaque possimus provident. Adipisci voluptatibus aut nobis voluptate cumque architecto explicabo magnam nemo quas odit mollitia quo, molestias asperiores laborum?',
     },
     {
-      'name': '22222222222222222222222222222222222222222222222222222',
+      'name': '1111122222222222222222222222222222222222222222222222222222',
       'review': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ratione itaque possimus provident. Adipisci voluptatibus aut nobis voluptate cumque architecto explicabo magnam nemo quas odit mollitia quo, molestias asperiores laborum?',
     },
     {
@@ -34,12 +36,12 @@ export class ColleaguesReviewsComponent{
       'review': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ratione itaque possimus provident. Adipisci voluptatibus aut nobis voluptate cumque architecto explicabo magnam nemo quas odit mollitia quo, molestias asperiores laborum?',
     },
     {
-      'name': '22222222222222222222222222222222222222222222222222222',
+      'name': '1111122222222222222222222222222222222222222222222222222222',
       'review': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ratione itaque possimus provident. Adipisci voluptatibus aut nobis voluptate cumque architecto explicabo magnam nemo quas odit mollitia quo, molestias asperiores laborum?',
     },  
   ];
   
-  displayedBoxes: {name:string; review:string}[] = [];
+  displayedReviews: {name:string; review:string}[] = [];
   
   currentIndex: number = 1;
 
@@ -54,7 +56,7 @@ export class ColleaguesReviewsComponent{
   updateDisplayedBoxes(): void {
     this.leftIndex = (this.currentIndex - 1 + this.boxes.length) % this.boxes.length;
     this.rightIndex = (this.currentIndex + 1) % this.boxes.length;
-    this.displayedBoxes = [
+    this.displayedReviews = [
       this.boxes[this.leftIndex],
       this.boxes[this.currentIndex],
       this.boxes[this.rightIndex]
@@ -62,8 +64,12 @@ export class ColleaguesReviewsComponent{
   }
 
   next(): void {
+    this.animation = true;
     this.currentIndex = (this.currentIndex + 1) % this.boxes.length;
     this.updateDisplayedBoxes();
+    setTimeout( () => {
+      this.animation = false;
+    }, 3000);
   }
 
   prev(): void {
@@ -71,7 +77,7 @@ export class ColleaguesReviewsComponent{
     this.updateDisplayedBoxes();
   }
 
-  isRedBox(i: number): boolean {
-    return i === 0 || i === 2;
+  translateValues(i: number): string {
+    return 'translateX(' + (i + 100) + '%)';
   }
 }
