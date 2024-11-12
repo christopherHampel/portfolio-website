@@ -10,29 +10,50 @@ import { CommonModule, NgFor } from '@angular/common';
 })
 export class EvaluationComponent{
 
-  moveRight:boolean = false;
+  carouselStart:boolean = false;
 
-  evaluations: {name:string; review:string}[] = [
+  evaluations: {name:string; review:string, index:number}[] = [
     {
       name: 'Kaloyan Ivanov',
-      review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto provident fugit reprehenderit facere dolorum, omnis consequatur et, repellat quasi dolorem ad autem cupiditate laboriosam alias libero aut assumenda asperiores soluta.'
+      review: '0000000000',
+      index: 0,
     },
     {
       name: 'Manuel Mannhold',
-      review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto provident fugit reprehenderit facere dolorum, omnis consequatur et, repellat quasi dolorem ad autem cupiditate laboriosam alias libero aut assumenda asperiores soluta.'
+      review: '111111111',
+      index: 1,
     },
     {
       name: 'Benjamin Blümchen',
-      review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto provident fugit reprehenderit facere dolorum, omnis consequatur et, repellat quasi dolorem ad autem cupiditate laboriosam alias libero aut assumenda asperiores soluta.'
+      review: '222222222',
+      index: 2,
     },
   ];
 
+  positionClasses = ['left-box', 'middle-box', 'right-box'];
+
   nextEvaluation() {
-    this.moveRight = true;
+    this.carouselStart = true;
+    // Letzte Position zur ersten verschieben und die restlichen umschichten
+    this.positionClasses.unshift(this.positionClasses.pop()!);
+  }
+
+  getPositionClass(index: number) {
+    // console.log(this.positionClasses);
+    return this.positionClasses[index];
+  }
+
+  // nextEvaluation() {
+  //   const firstItem = this.evaluations.shift();
+  //   if (firstItem) {
+  //     this.evaluations.push(firstItem);
+  //   }
+    
+    // this.moveRight = true;
     // setTimeout( () => {
     //   this.moveRight = false;
     // }, 2000);
-  }
+  // }
 
   previousEvaluation() {
 

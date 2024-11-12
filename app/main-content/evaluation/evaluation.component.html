@@ -7,10 +7,7 @@
         <div>
             @for (review of evaluations; track $index) {
                 <div class="review-box" 
-                [ngClass]="
-                {   'middle-box': $index === 1,
-                    'transform-right': moveRight,
-                }">
+                [ngClass]="getPositionClass($index)">
                     <span>{{ review.review }}</span>
                     <div class="review-author">
                         <div></div>

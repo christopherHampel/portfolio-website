@@ -13,12 +13,17 @@
 }
 
 .evaluations-carousel {
+    // width: 1440px;
+    height: 300px;
+    position: relative;
     >div {
-        @include flexBox(row, center, center, 64px);
+        @include flexBox(row, center, center, 60px);
     }
 }
 
 .review-box {
+    position: absolute;
+    top: 0;
     width: 600px;
     height: 240px;
     background-color: #26524B;
@@ -27,7 +32,8 @@
     padding: 48px;
     border: 1px solid #3DCFB6;
     border-radius: 24px;
-    transition: all 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+    // transition: all 1s ease-in-out;
     >.review-author {
         width: 100%;
         @include flexBox(row, flex-start, center, 16px);
@@ -39,13 +45,14 @@
     }
 }
 
-.middle-box {
-    height: 273px;
-    // transform: translateX(50%);
-}
+// .middle-box {
+//     height: 273px;
+//     // transform: translateX(50%);
+// }
 
 .blur-effect {
     position: absolute;
+    top: 0;
     overflow: hidden;
     z-index: 2;
     height: 240px;
@@ -72,8 +79,16 @@
     }
 }
 
-.transform-right {
-    transform: translateX(100%);
+.left-box {
+    transform: translateX(calc(-100% - 60px));
+}
+
+.middle-box {
+    transform: translateX(0);
+}
+
+.right-box {
+    transform: translateX(calc(100% + 60px));
 }
 
 
