@@ -12,51 +12,38 @@ export class EvaluationComponent{
 
   carouselStart:boolean = false;
 
-  evaluations: {name:string; review:string, index:number}[] = [
+  evaluations: {name:string; review:string}[] = [
+
     {
       name: 'Kaloyan Ivanov',
-      review: '0000000000',
-      index: 0,
+      review: 'Christopher hat bei unserem Teamprojekt durch sein eisernes Durchhaltevermögen auch in schwierige Phasen mit klaren Kopf und ruhiger Herangehensweise das Team sehr bereichert. Mit seiner Projekterfahrung im Frontend hat er einen entscheiden Teil für den Erfolg des Projekts gestemmt.  Danke für die erfolgreiche Zusammenarbeit Chris. ',
     },
     {
       name: 'Manuel Mannhold',
-      review: '111111111',
-      index: 1,
+      review: 'Die Zusammenarbeit mit Christopher war von Anfang an sehr angenehm. Er überzeugt durch seine Professionalität, lösungsorientiertes Denken und eine zuverlässige Arbeitsweise. Mit seiner offenen und freundlichen Art trägt er maßgeblich zu einer positiven Teamdynamik bei.',
     },
     {
-      name: 'Benjamin Blümchen',
-      review: '222222222',
-      index: 2,
+      name: 'No Colleague',
+      review: 'No current evaluation',
     },
+    // {
+    //   name: 'No Colleague2',
+    //   review: 'No current evaluation2',
+    // },
   ];
 
   positionClasses = ['left-box', 'middle-box', 'right-box'];
 
   nextEvaluation() {
-    this.carouselStart = true;
-    // Letzte Position zur ersten verschieben und die restlichen umschichten
     this.positionClasses.unshift(this.positionClasses.pop()!);
   }
 
   getPositionClass(index: number) {
-    // console.log(this.positionClasses);
     return this.positionClasses[index];
   }
 
-  // nextEvaluation() {
-  //   const firstItem = this.evaluations.shift();
-  //   if (firstItem) {
-  //     this.evaluations.push(firstItem);
-  //   }
-    
-    // this.moveRight = true;
-    // setTimeout( () => {
-    //   this.moveRight = false;
-    // }, 2000);
-  // }
-
   previousEvaluation() {
-
+    this.positionClasses.push(this.positionClasses.shift()!);
   }
   
   

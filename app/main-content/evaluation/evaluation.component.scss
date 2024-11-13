@@ -1,6 +1,7 @@
 @import './../../../styles.scss';
 
 .evaluations {
+    height: 452px;
     @include flexBox(column, center, center, 64px);
     overflow: hidden;
     >div {
@@ -13,8 +14,7 @@
 }
 
 .evaluations-carousel {
-    // width: 1440px;
-    height: 300px;
+    height: 100%;
     position: relative;
     >div {
         @include flexBox(row, center, center, 60px);
@@ -45,16 +45,11 @@
     }
 }
 
-// .middle-box {
-//     height: 273px;
-//     // transform: translateX(50%);
-// }
-
 .blur-effect {
     position: absolute;
-    top: 0;
+    top: 16.5px;
     overflow: hidden;
-    z-index: 2;
+    z-index: 5;
     height: 240px;
     width: 1440px;
     pointer-events: none;
@@ -80,16 +75,27 @@
 }
 
 .left-box {
-    transform: translateX(calc(-100% - 60px));
+    transform: translateX(calc(100% + 60px));
+    top: 16.5px;
+    z-index: 3;
 }
 
 .middle-box {
     transform: translateX(0);
+    height: 273px;
+    z-index: 2;
 }
 
 .right-box {
-    transform: translateX(calc(100% + 60px));
+    transform: translateX(calc(-100% - 60px));
+    top: 16.5px;
+    z-index: 1;
 }
+
+// .out-box {
+//     transform: translateX(calc(200% + 120px));
+//     display: none;
+// }
 
 
 

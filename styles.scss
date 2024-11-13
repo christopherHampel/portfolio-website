@@ -67,21 +67,21 @@ body {
   src: url('./assets/fonts/fira-code-v22-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-.font-karla-32 {
-  font-family: 'Karla';
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 38.4px;
-  color: #FFFF;
-}
+// .font-karla-32 {
+//   font-family: 'Karla';
+//   font-size: 32px;
+//   font-weight: 400;
+//   line-height: 38.4px;
+//   color: #FFFF;
+// }
 
-.font-karla-18 {
-  font-family: 'Karla';
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 21.6px;
-  color: #FFFFFFCC;
-}
+// .font-karla-18 {
+//   font-family: 'Karla';
+//   font-size: 18px;
+//   font-weight: 400;
+//   line-height: 21.6px;
+//   color: #FFFFFFCC;
+// }
 
 .max-width {
   width: 1440px;
@@ -110,7 +110,44 @@ body {
   padding: 12px 24px;
   background-color: transparent;
   color: #FFFF;
-  cursor: pointer;
+  transition: all 1s ease;
+  overflow: hidden;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  >.main-button-content {
+    display: inline-block;
+    z-index: 6;
+    white-space: nowrap;
+    position: relative;
+    @include styleFont('Karla', 18px, 400, 21.6px, #FFFF);
+  }
+}
+
+.main-button:hover .main-button-content {
+    cursor: pointer;
+    animation: startFromCenter 1s linear forwards, moveLeft 2s linear 1s infinite;
+}
+
+@keyframes startFromCenter {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-150%);
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(-150%);
+  }
 }
 
 h2{
