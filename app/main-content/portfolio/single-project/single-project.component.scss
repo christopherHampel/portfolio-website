@@ -7,9 +7,6 @@
     align-items: center;
     >div {
         @include flexBox(row, space-between, center, 0);
-        >span {
-            @include styleFont('Fira Code', 24px, 700, 28.8px, #FFFF);
-        }
     }
 }
 
@@ -23,6 +20,25 @@
     width: 880px;
     padding: 40px 32px;
     border-bottom: 1px solid #3DCFB6;
+    transition: all 125ms ease;
+
+    &:hover {
+        background-color: rgba(61, 207, 182, 0.3);
+        cursor: pointer;
+    }
+}
+
+.project-name-link {
+        @include flexBox(row, flex-start, center, 4px);
+        >span {
+            @include styleFont('Fira Code', 24px, 700, 28.8px, #FFFF);
+        }
+        >.hover-link-icon {
+            transition: all 125ms ease;
+            width: 23px;
+            height: 23px;
+            opacity: 0;
+        }
 }
 
 .first-project {
@@ -30,17 +46,18 @@
 }
 
 .hover-image {
+    transition: all .5s ease;
     padding-left: 80px;
     width: 295px;
     height: 192px;
     opacity: 0;
 }
 
-.project:hover {
-    cursor: pointer;
+.project:hover .hover-image {
+    opacity: 1;
 }
 
-.project:hover .hover-image {
+.project-description:hover .hover-link-icon {
     opacity: 1;
 }
 

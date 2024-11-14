@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { ProjectComponent } from './project/project.component';
+import { SingleProjectComponent } from './single-project/single-project.component';
 import { MatDialogModule } from '@angular/material/dialog';
 
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [ProjectComponent, MatDialogModule],
+  imports: [SingleProjectComponent, MatDialogModule],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })

@@ -8,12 +8,12 @@
     <div class="portfolio-menu">
         <div>
             @for (project of currentProjects; track $index) {
-                <app-project
+                <app-single-project
                     projectName="{{ project.projectName }}" 
                     projectSkills="{{ project.projectSkills }}"
                     projectImage="{{ project.projectImage }}"
                     [isFirstElement]="$index === 0">
-                </app-project>
+                </app-single-project>
             }
         </div>
     </div>

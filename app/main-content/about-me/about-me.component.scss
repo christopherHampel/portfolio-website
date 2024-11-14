@@ -18,6 +18,9 @@ section {
 
 .content-about-me {
     @include flexBox(column, flex-start, flex-start, 32px);
+    >span {
+        @include styleFont('Karla', 18px, 400, 21.6px, #FFFF);
+    }
 }
 
 .enumerations-about-me {
@@ -27,6 +30,9 @@ section {
         >img {
             width: 32px;
             height: 32px;
+        }
+        >span {
+            @include styleFont('Karla', 18px, 400, 21.6px, #FFFF);
         }
     }
 }

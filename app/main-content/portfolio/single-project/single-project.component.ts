@@ -4,13 +4,13 @@ import { MatDialog, MatDialogModule, MatDialogConfig } from '@angular/material/d
 import { ProjectDialogComponent } from './project-dialog/project-dialog.component';
 
 @Component({
-  selector: 'app-project',
+  selector: 'app-single-project',
   standalone: true,
   imports: [ NgClass, NgStyle, MatDialogModule],
-  templateUrl: './project.component.html',
-  styleUrl: './project.component.scss'
+  templateUrl: './single-project.component.html',
+  styleUrl: './single-project.component.scss'
 })
-export class ProjectComponent {
+export class SingleProjectComponent {
 
   constructor(private dialog: MatDialog) {}
 

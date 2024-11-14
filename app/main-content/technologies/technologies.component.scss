@@ -11,6 +11,15 @@
 
 .content-skillset {
     @include flexBox(column, flex-start, flex-start, 32px);
+    >p {
+        @include styleFont('Karla', 18px, 400, 21.6px, #FFFF);
+    }
+    >span {
+        @include styleFont('Fira Code', 24px, 700, 28.8px, #FFFF);
+        >span {
+            color: #3DCFB6;
+        }
+    }
 }
 
 .font-karla-16 {
@@ -19,13 +28,18 @@
 
 .skill-set-icons {
     width: calc(632px + 96px);
-    // padding-left: 96px;
     flex-wrap: wrap;
     @include flexBox(row, flex-start, flex-start, 72px);
 }
 
+.technology-description {
+    transition: all 125ms ease;
+}
+
 .single-technology {
     width: 104px;
+    position: relative;
+    transition: all 3ms ease;
     @include flexBox(column, center, center, 8px);
     >img {
         width: 60px;
@@ -41,3 +55,48 @@
         text-align: center;
     }
 }
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;  
+    // position: absolute;
+  }
+
+  .tooltiptext {
+    >div {
+        padding: 16px;
+        width: 220px;
+        height: 161px;
+        background-image: url('./../../../assets/img/tooltip_bubble.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -185px;
+        left: -64px;
+        z-index: 5;
+        >span {
+            @include styleFont('Karla', 16px, 400, 18.7px, #3DCFB6);
+        }
+    }
+
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .vs-hidden {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .single-technology:hover .technology-description {
+    color: #3DCFB6;
+  }
+
+  .interested-technologies {
+    @include flexBox(row, center, center, 16px);
+  }

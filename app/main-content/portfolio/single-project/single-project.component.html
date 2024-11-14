@@ -1,6 +1,9 @@
 <section class="project" (click)="showProjectDialog()">
     <div class="project-description" [ngClass]="{'first-project': isFirstElement}">
-        <span>{{ projectName }}</span>
+        <div class="project-name-link">
+            <span>{{ projectName }}</span>
+            <div class="hover-link-icon"><img src="assets/img/link_icon.png" alt=""></div>
+        </div>
         <div class="required-skills">
             <span>{{ projectSkills }}</span>
         </div>

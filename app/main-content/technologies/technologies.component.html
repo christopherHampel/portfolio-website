@@ -7,7 +7,7 @@
             <h3>Skill Set</h3>
 
             <div class="content-skillset">
-                <p class="font-karla-18">My journey has involved working on diverse projects, employing a range of frontend technologies and concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and stay ahead in the ever-evolving landscape of web development.</p>
+                <p>My journey has involved working on diverse projects, employing a range of frontend technologies and concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and stay ahead in the ever-evolving landscape of web development.</p>
 
                 <span>You need <span>another skill?</span></span>
     
@@ -19,17 +19,25 @@
 
     <div class="skill-set-icons">
 
-        @for (technology of technolgies; track $index) {
-            <div class="single-technology">
+        @for (technology of technologies; track $index) {
+            <div [ngClass]="$index == technologies.length - 1 ? 'tooltip' : ''" class="single-technology">
+                <span [ngClass]="{'tooltiptext': $index === technologies.length - 1, 'vs-hidden': true}">
+                    <div>
+                        <span>I have a special interest in learning</span>
+                        <div class="interested-technologies">
+                            <div>
+                                <img src="assets/img/React Js.png" alt="">
+                            </div>
+                            <div>
+                                <img src="assets/img/Frame 302.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </span>
                 <img src='{{ technology.image }}'>
-                <span>{{ technology.description }}</span>
+                <span [ngClass]="{'technology-description': $index === technologies.length - 1}">{{ technology.description }}</span>
             </div>
         }
-
-        <!-- <div class="single-technology">
-            <img src="assets/img/growth_mindset_icon.png" alt="">
-            <span>Growth Mindset</span>
-        </div> -->
     </div>
 
 </section>

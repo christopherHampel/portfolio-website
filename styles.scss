@@ -9,6 +9,22 @@ body {
   background-color: #1C1C1C;
 }
 
+@mixin styleFont($fontFamily, $fontSize, $fontWeight, $lineWeight, $fontColor) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineWeight;
+  color: $fontColor;
+}
+
+@mixin flexBox($flexDirection, $justifyContent, $alignItems, $gap) {
+  display: flex;
+  flex-direction: $flexDirection;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  gap: $gap;
+}
+
 /* karla-regular - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -67,41 +83,9 @@ body {
   src: url('./assets/fonts/fira-code-v22-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-// .font-karla-32 {
-//   font-family: 'Karla';
-//   font-size: 32px;
-//   font-weight: 400;
-//   line-height: 38.4px;
-//   color: #FFFF;
-// }
-
-// .font-karla-18 {
-//   font-family: 'Karla';
-//   font-size: 18px;
-//   font-weight: 400;
-//   line-height: 21.6px;
-//   color: #FFFFFFCC;
-// }
-
 .max-width {
   width: 1440px;
   margin: 0 auto;
-}
-
-@mixin styleFont($fontFamily, $fontSize, $fontWeight, $lineWeight, $fontColor) {
-  font-family: $fontFamily;
-  font-size: $fontSize;
-  font-weight: $fontWeight;
-  line-height: $lineWeight;
-  color: $fontColor;
-}
-
-@mixin flexBox($flexDirection, $justifyContent, $alignItems, $gap) {
-  display: flex;
-  flex-direction: $flexDirection;
-  justify-content: $justifyContent;
-  align-items: $alignItems;
-  gap: $gap;
 }
 
 .main-button {
@@ -153,11 +137,13 @@ body {
 
 h2{
   @include styleFont('Karla', 24px, 500, 28.06px, #3DCFB6);
+  margin: 0;
 }
 
 h3 {
   @include styleFont('Fira Code', 64px, 700, 64px, #3DCFB6);
   letter-spacing: -0.03em;
+  margin: 0;
 }
 
 
