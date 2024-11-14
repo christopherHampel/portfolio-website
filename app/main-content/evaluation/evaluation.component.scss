@@ -5,7 +5,7 @@
     @include flexBox(column, center, center, 64px);
     overflow: hidden;
     >div {
-        @include flexBox(row, center, flex-start, 0);
+        @include flexBox(row, center, flex-start, 24px);
         >h2 {
             @include styleFont('Fira Code', 32px, 700, 41.98px, #3DCFB6);
             margin: 0;
@@ -62,8 +62,12 @@
     );
 }
 
+.ellipse-container {
+    height: 100%;
+}
+
 .arrows-carousel {
-    @include flexBox(row, center, center, 8px);
+    @include flexBox(row, center, center, 24px);
     >div {
         @include flexBox(row, center, center, 8px);
     }
@@ -78,24 +82,27 @@
     transform: translateX(calc(100% + 60px));
     top: 16.5px;
     z-index: 3;
+    // display: block;
 }
 
 .middle-box {
     transform: translateX(0);
     height: 273px;
     z-index: 2;
+    // display: block;
 }
 
 .right-box {
     transform: translateX(calc(-100% - 60px));
     top: 16.5px;
     z-index: 1;
+    // display: block;
 }
 
-// .out-box {
-//     transform: translateX(calc(200% + 120px));
-//     display: none;
-// }
+.out-box {
+    transform: translateX(calc(200% + 120px));
+    display: none;
+}
 
 
 

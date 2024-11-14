@@ -23,8 +23,22 @@ footer {
 
 .social-media {
     @include flexBox(column, flex-start, flex-start, 8px);
+}
+
+.footer-link {
+    @include flexBox(row, flex-start, center, 8px);  
+    >.hover-effect {
+        opacity: 0;
+    }
     >a {
         text-decoration: none;
         @include styleFont('Karla', 16px, 400, 19.2px, #FFFF);
+        &:hover {
+            color: #3DCFB6;
+        }
     }
+}
+
+.footer-link:hover .hover-effect {
+    opacity: 1;
 }
