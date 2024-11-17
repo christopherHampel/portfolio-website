@@ -5,6 +5,10 @@
     // font-family: 'Karla';
 }
 
+.mat-body p, .mat-body-2 p, .mat-typography .mat-body p, .mat-typography .mat-body-2 p, .mat-typography p {
+  margin: 0;
+}
+
 body {
   background-color: #1C1C1C;
 }
@@ -162,3 +166,10 @@ h3 {
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@media (max-width: 1440px) {
+  .max-width {
+    width: 100%;
+  }
+}

@@ -60,8 +60,23 @@ app-keywords-marquee {
         width: 32px;
         height: 32px;
     }
-    >.right-leteral-vector {
-        height: 186px;
-        border: 1px solid #FFFF;
-        }
+}
+
+.right-leteral-vector {
+    height: 186px;
+    border: 1px solid #FFFF;
+}
+
+@media(max-width: 1440px) {
+    .leterals {
+        padding: 0 40px;
+        width: 100%;
+        gap: 0px;
+    }
+}
+
+@media(max-width: 900px) {
+    .right-leteral-vector {
+        height: 100px;
+    }
 }
