@@ -1,5 +1,17 @@
 @import './../../../styles.scss';
 
+@mixin iconHover($bgImage, $bgImageHover, $width, $height) {
+    transition: all 25ms ease-in;
+    width: $width;
+    height: $height;
+    background-image: $bgImage;
+    background-repeat: no-repeat;
+    background-position: center;
+    &:hover {
+        background-image: $bgImageHover;
+    }
+}
+
 section {
     height: 100vh;
     display: flex;
@@ -23,11 +35,6 @@ app-keywords-marquee {
 }
 
 .left-leteral {
-    // position: absolute;
-    // bottom: 0;
-    // left: 96px;
-    // height: 312px;
-    // background: none;
     @include flexBox(column, center, center, 24px);
     >img {
         width: 30px;
@@ -41,30 +48,47 @@ app-keywords-marquee {
 }
 
 .right-leteral {
-    // position: absolute;
-    // bottom: 0;
-    // right: 96px;
-    // height: 480px;
-    // background: none;
     @include flexBox(column, center, center, 24px);
-    >a {
-        text-decoration: none;
-        writing-mode:vertical-rl;
-        transform: rotate(180deg);
-        color: white;
-        font-family: 'Karla';
-        font-size: 18px;
-        font-weight: 400;
-    }
     >img {
         width: 32px;
         height: 32px;
     }
 }
 
+.email-contact {
+    >.contact-email {
+        text-decoration: none;
+        writing-mode:vertical-rl;
+        transform: rotate(180deg);
+        @include styleFont('Karla', 18px, 400, 21.6px, #FFFF);
+
+        &:hover {
+            color: #3DCFB6;
+        }
+    }
+}
+
+.responsive-contact-icon {
+    @include iconHover(url('./../../../assets/img/contact_icon.png'), url('./../../../assets/img/Mail\ Hover.png'), 64px, 32px);
+    display: none;
+}
+
+.scroll-down {
+    // transition: all 500ms ease-in;
+    @include iconHover(url('./../../../assets/img/scroll_down_icon.png'), url('./../../../assets/img/scroll_down_hover.png'), 32px, 48px);
+}
+
 .right-leteral-vector {
     height: 186px;
     border: 1px solid #FFFF;
+}
+
+.github-icon {
+    @include iconHover(url('./../../../assets/img/Github.png'), url('./../../../assets/img/Github_hover.png'), 64px, 32px);
+}
+
+.linkedin-icon {
+    @include iconHover(url('./../../../assets/img/Linkedin.png'), url('./../../../assets/img/Linkedin\ Hover.png'), 64px, 32px);
 }
 
 @media(max-width: 1440px) {
@@ -78,5 +102,15 @@ app-keywords-marquee {
 @media(max-width: 900px) {
     .right-leteral-vector {
         height: 100px;
+    }
+}
+
+@media(max-width: 750px) {
+    .contact-email {
+        display: none;
+    }
+
+    .responsive-contact-icon {
+        display: block;
     }
 }

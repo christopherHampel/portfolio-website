@@ -1,9 +1,33 @@
 @import './../../../../styles.scss';
+@import './../../../../../src/app/main-content/above-the-fold/above-the-fold.component.scss';
 
 nav {
     height: 98px;
     background-color: transparent;
     @include flexBox(row, space-between, center, 0);
+}
+
+.nav-links {
+    position: relative;
+    >a {
+        @include styleFont('Fira Code', 20px, 400, 26.24px, #FFFF);
+        text-decoration: none;
+        letter-spacing: -3%;
+    }
+    >img {
+        transition: all 50ms ease-in;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+
+    &:hover {
+        >img {
+            opacity: 1;
+        }
+    }
 }
 
 .toggle-language:hover {
@@ -19,9 +43,10 @@ nav {
     }
 }
 
+.english {
+    @include iconHover(url('./../../../../assets/img/language_swicth_english.png'), url('./../../../../assets/img/language_switch_hover.png'), 84px, 28px);
+}
 
-// @media (max-width: 1440px) {
-//     nav {
-//         padding: 0 98px;
-//     }
-// }
+.german {
+    @include iconHover(url('./../../../../assets/img/language_switch_german.png'), url('./../../../../assets/img/language_switch_german_hover.png'), 84px, 28px);
+}

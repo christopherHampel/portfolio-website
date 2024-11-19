@@ -12,7 +12,10 @@
                     projectName="{{ project.projectName }}" 
                     projectSkills="{{ project.projectSkills }}"
                     projectImage="{{ project.projectImage }}"
-                    [isFirstElement]="$index === 0">
+                    projectDescription="{{ project.projectDescription }}"
+                    [isFirstElement]="$index === 0"
+                    [index]="$index"
+                    [currentProjects]="currentProjects">
                 </app-single-project>
             }
         </div>
