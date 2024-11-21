@@ -7,6 +7,23 @@ nav {
     @include flexBox(row, space-between, center, 0);
 }
 
+.nav-area {
+    position: relative;
+    opacity: 1;
+    // >div {
+    //     position: absolute;
+    // }
+}
+
+.nav-responsive {
+    position: absolute;
+    background-image: url('./../../../../assets/img/burgermenu_button.png');
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 48px;
+    opacity: 0;
+}
+
 .nav-links {
     position: relative;
     >a {
@@ -49,4 +66,31 @@ nav {
 
 .german {
     @include iconHover(url('./../../../../assets/img/language_switch_german.png'), url('./../../../../assets/img/language_switch_german_hover.png'), 84px, 28px);
+}
+
+@media(max-width: 900px) {
+    .nav-links {
+        >a {
+            font-size: 16px;
+        }
+    }
+}
+
+@media(max-width: 750px) {
+    nav {
+        flex-direction: row-reverse;
+    }
+
+    .nav-area {
+        display: flex;
+    }
+
+    .links {
+        opacity: 0;
+    }
+
+    .nav-responsive {
+        position: static;
+        opacity: 1;
+    }
 }

@@ -25,9 +25,9 @@
             <img (click)="previousEvaluation()" src="assets/img/arrow_back.png" alt="">
         </div>
         <div class="ellipse-container">
-            <img src="assets/img/Ellipse 3.png" alt="">
-            <img src="assets/img/Ellipse 3.png" alt="">
-            <img src="assets/img/Ellipse 3.png" alt="">
+            @for (review of evaluations; track $index) {
+                <div [ngClass]="getEllipse($index)"></div>
+            }
         </div>
         <img (click)="nextEvaluation()" src="assets/img/arrow_forward.png" alt="">
     </div>

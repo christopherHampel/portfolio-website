@@ -15,8 +15,10 @@
 
 .evaluations-carousel {
     height: 100%;
+    width: 100%;
     position: relative;
     >div {
+        width: 100%;
         @include flexBox(row, center, center, 60px);
     }
 }
@@ -79,89 +81,39 @@
 }
 
 .left-box {
-    transform: translateX(calc(100% + 60px));
+    transform: translateX(calc(-100% - 60px));
     top: 16.5px;
     z-index: 3;
-    // display: block;
 }
 
 .middle-box {
     transform: translateX(0);
     height: 273px;
     z-index: 2;
-    // display: block;
 }
 
 .right-box {
-    transform: translateX(calc(-100% - 60px));
+    transform: translateX(calc(100% + 60px));
     top: 16.5px;
     z-index: 1;
-    // display: block;
 }
 
-.out-box {
-    transform: translateX(calc(200% + 120px));
-    display: none;
+.normal-ellipse {
+    background-image: url('./../../../assets/img/Ellipse\ 3.png');
+    background-repeat: no-repeat;
+    width: 8px;
+    height: 8px;
 }
 
+.highlight-ellipse {
+    background-image: url('./../../../assets/img/ellipse_highlight.png');
+    background-repeat: no-repeat;
+    width: 8px;
+    height: 8px;
+}
 
-
-
-
-
-
-
-
-
-
-
-// .carousel {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//     gap: 10px;
-// }
-
-// .arrow {
-//     font-size: 24px;
-//     background: none;
-//     border: none;
-//     cursor: pointer;
-// }
-
-// .box-container {
-//     display: flex;
-//     gap: 60px;
-//     width: 1440px;
-//     justify-content: center;
-//     align-items: center;
-//     overflow: hidden;
-// }
-
-// .box {
-//     min-width: 700px;
-//     height: 230px;
-//     background-color: rgb(47, 91, 84);
-//     display: flex;
-//     align-items: center;
-//     justify-content: flex-start;
-//     font-size: 24px;
-//     transition: all 3s ease-in-out;
-//     overflow: hidden;
-// }
-
-// .box.active {
-//     width: 600px;
-//     // height: 274px;
-//     flex-shrink: 0;
-// }
-
-// .overlap-blur-effect {
-//     width: 100%;
-//     height: 230px;
-//     position: absolute;
-//     z-index: 2;
-//     background: rgb(47, 91, 84);
-//     backdrop-filter: blur(10px);
-// }
+@media(max-width: 1440px) {
+    .blur-effect {
+        width: 100%;
+    }
+}

@@ -1,29 +1,34 @@
 <nav class="max-width">
-    <div class="links">
+    <div class="nav-area">
+        <div class="links">
 
-        <div [ngClass]="english ? 'english' : 'german'" (click)="toggleLanguage()" class="toggle-language"></div>
-
-        <div class="nav-links">
-            <a href="#">About me</a>
-            <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
+            <div [ngClass]="english ? 'english' : 'german'" (click)="toggleLanguage()" class="toggle-language"></div>
+    
+            <div class="nav-links">
+                <a href="#">About me</a>
+                <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
+            </div>
+    
+            <div class="nav-links">
+                <a href="#">Skills</a>
+                <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
+            </div>        
+            
+            <div class="nav-links">
+                <a href="#">Projects</a>
+                <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
+            </div>        
+            
+            <div class="nav-links">
+                <a href="#contact-me">About me</a>
+                <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
+            </div>
+            
         </div>
 
-        <div class="nav-links">
-            <a href="#">Skills</a>
-            <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
-        </div>        
-        
-        <div class="nav-links">
-            <a href="#">Projects</a>
-            <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
-        </div>        
-        
-        <div class="nav-links">
-            <a href="#contact-me">About me</a>
-            <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
-        </div>
-        
+        <div class="nav-responsive"></div>
     </div>
+
     <div>
         <img src="#" alt="">
     </div>

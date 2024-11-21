@@ -26,20 +26,22 @@ export class EvaluationComponent{
       name: 'No Colleague',
       review: 'No current evaluation',
     },
-    // {
-    //   name: 'No Colleague2',
-    //   review: 'No current evaluation2',
-    // },
   ];
 
   positionClasses = ['left-box', 'middle-box', 'right-box'];
+  positionEllipse = ['normal-ellipse','highlight-ellipse', 'normal-ellipse']
 
   nextEvaluation() {
     this.positionClasses.unshift(this.positionClasses.pop()!);
+    this.positionEllipse.unshift(this.positionEllipse.pop()!);
   }
 
   getPositionClass(index: number) {
     return this.positionClasses[index];
+  }
+
+  getEllipse(index: number) {
+    return this.positionEllipse[index];
   }
 
   previousEvaluation() {

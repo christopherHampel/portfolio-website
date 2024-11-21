@@ -1,5 +1,19 @@
 @import './../../../styles.scss';
 
+@mixin checkBox($url, $urlHover) {
+    background-image: url($url);
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    transition: all 100ms ease-in;
+
+    &:hover {
+        cursor: pointer;
+        background-image: url($urlHover);
+        background-position: center;
+    }
+}
+
 .contact-me {
     padding: 144px 112px;
     @include flexBox(row, flex-start, flex-start, 64px);
@@ -34,7 +48,7 @@
 .rightside-formular {
     >form {
         @include flexBox(column, center, center, 16px);
-        >div {
+        >.input-field {
             @include flexBox(column, flex-start, flex-start, 16px);
             padding: 32px;
             width: 616px;
@@ -64,4 +78,42 @@
 
 h2, h3, h4, p {
     margin: 0;
+}
+
+.checkBox-privacy-police {
+    width: 100%;
+    padding: 32px 0;
+    @include flexBox(column, flex-start, flex-start, 8px);
+    >div {
+        @include flexBox(row, flex-start, center, 8px);
+        >span {
+            @include styleFont('Karla', 15px, 400, 18px, #FFFF);
+            >span {
+                @include styleFont('Fira Code', 15px, 400, 18px, #3DCFB6);
+                letter-spacing: -3%;
+            }
+        }
+    }
+}
+
+.warning {
+    height: 17px;
+    >span {
+        color: #EC7B7B !important;
+    }
+}
+
+.checked {
+    @include checkBox('./../../../assets/img/Check_mark.png', './../../../assets/img/Property 1=Default hover.png');
+}
+
+.unchecked {
+    @include checkBox('./../../../assets/img/Checked_mark.png', './../../../assets/img/Property\ 1=Checked\ hover.png'
+);
+}
+
+input[type="submit"] {
+    padding: 12px 24px;
+    border: 1px solid #FFF;
+    border-radius: 100px;
 }

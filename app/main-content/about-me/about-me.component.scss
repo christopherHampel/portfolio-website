@@ -5,10 +5,6 @@ section {
     width: 1456.35px;
     height: 996px;
     padding: 144px 112px;
-    >div {
-        width: 568px;
-        height: 568px;
-    }
 }
 
 .declarations-about-me {
@@ -39,14 +35,15 @@ section {
 
 .profile-container {
     position: relative;
+}
+
+.profile-image-size {
     width: 568px;
     height: 568px;
 }
 
 .profile-image {
     position: absolute;
-    width: 568px;
-    height: 568px;
     z-index: 1;
     object-fit: cover;
     border-radius: 30px;
@@ -80,5 +77,38 @@ section {
 
     .profile-image {
         position: static;
+    }
+}
+
+@media(max-width: 650px) {
+    .profile-image-size {
+        width: 400px;
+        height: 400px;
+    }
+
+    .declarations-about-me {
+        width: 400px;
+    }
+}
+
+@media(max-width: 450px) {
+    .profile-image-size {
+        width: 358px;
+        height: 358px;
+    }
+    
+    .declarations-about-me {
+        width: 358px;
+    }
+}
+
+@media(max-width: 380px) {
+    .profile-image-size {
+        width: 290px;
+        height: 290px;
+    }
+    
+    .declarations-about-me {
+        width: 290px;
     }
 }

@@ -1,3 +1,4 @@
+import { CommonModule, NgClass, NgStyle } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
@@ -5,13 +6,22 @@ import { FormsModule, NgForm } from '@angular/forms';
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [ FormsModule ],
+  imports: [ FormsModule, NgClass, NgStyle ],
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss'
 })
 export class ContactMeComponent {
 
   http = inject(HttpClient);
+  privacyPolice = false;
+
+  checkPrivacyPolice() {
+    if(!this.privacyPolice) {
+      this.privacyPolice = true;
+    } else {
+      this.privacyPolice = false;
+    }
+  }
 
   contactData = {
     name: '',
