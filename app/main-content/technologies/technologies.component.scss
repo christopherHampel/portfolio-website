@@ -2,6 +2,7 @@
 
 .technologies {
     @include flexBox(row, center, center, 80px);
+    padding-bottom: 144px;
 }
 
 .declarations-skill-set {
@@ -62,7 +63,6 @@
 
 .tooltip .tooltiptext {
     visibility: hidden;  
-    // position: absolute;
   }
 
   .tooltiptext {
@@ -99,4 +99,50 @@
 
   .interested-technologies {
     @include flexBox(row, center, center, 16px);
+  }
+
+  @media(max-width: 1440px) {
+    .technologies {
+        flex-direction: column;
+    }
+
+    .declarations-skill-set {
+        padding-left: 0;
+        width: 568px;
+    }
+
+    .skill-set-icons {
+        width: 568px;
+        justify-content: center;
+    }
+  }
+
+  @media(max-width: 650px) {
+    .declarations-skill-set, .skill-set-icons {
+        width: 400px;
+    }
+  }
+  
+  @media(max-width: 450px) {
+    .declarations-skill-set, .skill-set-icons {
+        width: 358px;
+    }
+
+    .skill-set-icons {
+        gap: 16px;
+        overflow: hidden;
+    }
+    
+    .single-technology {
+        >span {
+            font-size: 16px;
+        }
+    }
+  }
+
+  @media(max-width: 380px) {
+    .declarations-skill-set, .skill-set-icons {
+        width: 290px;
+        overflow-x: hidden;
+    }
   }

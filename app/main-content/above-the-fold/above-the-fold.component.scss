@@ -118,3 +118,11 @@ app-keywords-marquee {
         display: block;
     }
 }
+
+@media(max-width: 550px) {
+    .left-leteral {
+        >.left-leteral-vector {
+            height: 100px;
+        }
+    }
+}

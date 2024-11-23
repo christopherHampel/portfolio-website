@@ -15,7 +15,72 @@
     </div>
 
     <div class="rightside-formular">
-        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+            <!-- Name Field -->
+            <div class="form-group">
+              <label for="name">What's your name?</label>
+              <input
+                id="name"
+                type="text"
+                formControlName="name"
+                placeholder="Your name goes here"
+              />
+              <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+                Oops! it seems your name is missing
+              </div>
+            </div>
+          
+            <!-- Email Field -->
+            <div class="form-group">
+              <label for="email">What's your email?</label>
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                placeholder="youremail@email.com"
+              />
+              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+                Hoppla! your email is required
+              </div>
+            </div>
+          
+            <!-- Message Field -->
+            <div class="form-group">
+              <label for="message">How can I help you?</label>
+              <textarea
+                id="message"
+                formControlName="message"
+                placeholder="What do you need to develop?"
+              ></textarea>
+              <div *ngIf="message.invalid && (message.dirty || message.touched)" class="error">
+                What do you need to develop?
+              </div>
+            </div>
+          
+            <!-- Privacy Policy Checkbox -->
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input
+                  type="checkbox"
+                  formControlName="privacyPolicy"
+                />
+                <span class="custom-checkbox"></span>
+                I've read the privacy policy and agree to the processing of my data as outlined.
+              </label>
+              <div *ngIf="privacyPolicy.invalid && (privacyPolicy.dirty || privacyPolicy.touched)" class="error">
+                Please accept the privacy policy.
+              </div>
+            </div>
+          
+            <!-- Submit Button -->
+            <button type="submit" [disabled]="contactForm.invalid">
+              Submit
+            </button>
+          </form>
+          
+
+        <!-- <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 
             <div class="input-field">
                 <label for="name">What's your name?</label>
@@ -44,7 +109,7 @@
 
             <input type="submit" value="Say hello ;)">
           
-        </form>
+        </form> -->
     </div>
 
 </section>

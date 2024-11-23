@@ -17,6 +17,18 @@
 
                 <div class="blur-effect"></div>
             }
+            <!-- @for (review of evaluations; track $index) {
+                <div class="review-box-shadow" 
+                [ngClass]="getPositionClass($index)">
+                    <span>{{ review.review }}</span>
+                    <div class="review-author">
+                        <div></div>
+                        <span>{{ review.name }}</span>
+                    </div>
+                </div>
+
+                <div class="blur-effect"></div>
+            } -->
         </div>
     </div>
 

@@ -1,11 +1,10 @@
 @import './../../../styles.scss';
 
 .evaluations {
-    height: 452px;
+    // height: 452px;
     @include flexBox(column, center, center, 64px);
-    overflow: hidden;
     >div {
-        @include flexBox(row, center, flex-start, 24px);
+        @include flexBox(row, center, center, 24px);
         >h2 {
             @include styleFont('Fira Code', 32px, 700, 41.98px, #3DCFB6);
             margin: 0;
@@ -14,7 +13,8 @@
 }
 
 .evaluations-carousel {
-    height: 100%;
+    overflow: hidden;
+    height: 274px;
     width: 100%;
     position: relative;
     >div {
@@ -27,7 +27,7 @@
     position: absolute;
     top: 0;
     width: 600px;
-    height: 240px;
+    height: 248px;
     background-color: #26524B;
     @include flexBox(column, center, flex-start, 64px);
     @include styleFont('Karla', 18px, 400, 21.6px, #FFFF);
@@ -35,7 +35,7 @@
     border: 1px solid #3DCFB6;
     border-radius: 24px;
     transition: transform 1s ease-in-out;
-    // transition: all 1s ease-in-out;
+    // transition: all 1s <-in-out;
     >.review-author {
         width: 100%;
         @include flexBox(row, flex-start, center, 16px);
@@ -52,7 +52,7 @@
     top: 16.5px;
     overflow: hidden;
     z-index: 5;
-    height: 240px;
+    height: 248px;
     width: 1440px;
     pointer-events: none;
     background: linear-gradient(
@@ -84,11 +84,14 @@
     transform: translateX(calc(-100% - 60px));
     top: 16.5px;
     z-index: 3;
+    >span {
+        overflow: hidden;
+    }
 }
 
 .middle-box {
     transform: translateX(0);
-    height: 273px;
+    height: 274px; 
     z-index: 2;
 }
 
@@ -96,6 +99,9 @@
     transform: translateX(calc(100% + 60px));
     top: 16.5px;
     z-index: 1;
+    >span {
+        overflow: hidden;
+    }
 }
 
 .normal-ellipse {
@@ -115,5 +121,64 @@
 @media(max-width: 1440px) {
     .blur-effect {
         width: 100%;
+    }
+}
+
+@media(max-width: 900px) {
+    .review-box {
+        width: 500px;
+    }
+
+    .left-box {
+        transform: translateX(calc(-100% - 40px));
+    }
+    
+    .right-box {
+        transform: translateX(calc(100% + 40px));
+    }
+
+    .blur-effect {
+        display: none;
+    }
+}
+
+@media(max-width: 650px) {
+    .review-box {
+        width: 400px;
+        gap: 40px;
+    }
+
+    .left-box {
+        transform: translateX(calc(-100% - 32px));
+    }
+    
+    .right-box {
+        transform: translateX(calc(100% + 32px));
+    }
+}
+
+@media(max-width: 500px) {
+    // .evaluations {
+    //     gap: 0;
+    // }
+
+    .review-box {
+        width: 400px;
+        gap: 40px;
+    }
+
+    .left-box {
+        transform: translateX(calc(-100% - 32px));
+    }
+    
+    .right-box {
+        transform: translateX(calc(100% + 32px));
+    }
+}
+
+@media(max-width: 400px) {
+    .review-box {
+        width: 290px;
+        height: auto;
     }
 }

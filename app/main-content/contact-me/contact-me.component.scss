@@ -1,18 +1,18 @@
 @import './../../../styles.scss';
 
-@mixin checkBox($url, $urlHover) {
-    background-image: url($url);
-    background-repeat: no-repeat;
-    width: 24px;
-    height: 24px;
-    transition: all 100ms ease-in;
+// @mixin checkBox($url, $urlHover) {
+//     background-image: url($url);
+//     background-repeat: no-repeat;
+//     width: 24px;
+//     height: 24px;
+//     transition: all 100ms ease-in;
 
-    &:hover {
-        cursor: pointer;
-        background-image: url($urlHover);
-        background-position: center;
-    }
-}
+//     &:hover {
+//         cursor: pointer;
+//         background-image: url($urlHover);
+//         background-position: center;
+//     }
+// }
 
 .contact-me {
     padding: 144px 112px;
@@ -20,6 +20,8 @@
 }
 
 .leftside {
+    min-width: 
+    568px;
     @include flexBox(column, flex-start, flex-start, 40px);
     >div {
         @include flexBox(column, flex-start, flex-start, 20px);
@@ -47,73 +49,167 @@
 
 .rightside-formular {
     >form {
-        @include flexBox(column, center, center, 16px);
-        >.input-field {
-            @include flexBox(column, flex-start, flex-start, 16px);
-            padding: 32px;
-            width: 616px;
-            border-top: 1px solid rgba(61, 207, 182, 1);
-            >label {
-                @include styleFont('Fira Code', 24px, 500, 28.8px, #3DCFB6);
-            }
-            >input, textarea {
-                background: none;
-                border: none;
-                outline: none;
-                width: 100%;
-                resize: none;
-                @include styleFont('Karla', 18px, 400, 21.6px, rgba(255, 255, 255));
-            }
-            >input::placeholder, textarea::placeholder {
-                @include styleFont('Karla', 18px, 400, 21.6px, rgba(255, 255, 255, 0.8));
-            }
+        @include flexBox(column, center, flex-start, 16px);
+    }
+}
+
+.form-group {
+    width: 616px;
+    border-top: 1px solid rgba(61, 207, 182, 1);
+    padding: 32px;
+    @include flexBox(column, center, flex-start, 16px);
+    >label {
+        @include styleFont('Fira Code', 24px, 500, 28.8px, #3DCFB6);
+    }
+    >input::placeholder, textarea::placeholder {
+        @include styleFont('Karla', 18px, 400, 21.6px, #FFFF);
+    }
+    >input, textarea {
+        background: none;
+        border: none;
+        outline: none;
+        color: #FFFF;
+        width: 100%;
+        resize: none;
+        @include styleFont('Karla', 18px, 400, 21.6px, #FFFF);
+    }
+}
+
+.error {
+    @include styleFont('Karla', 18px, 400, 21.6px, rgba(236, 123, 123, 0.8));
+}
+
+// .rightside-formular {
+//     >form {
+//         @include flexBox(column, center, center, 16px);
+//         >.input-field {
+//             @include flexBox(column, flex-start, flex-start, 16px);
+//             padding: 32px;
+//             width: 616px;
+//             border-top: 1px solid rgba(61, 207, 182, 1);
+//             >label {
+//                 @include styleFont('Fira Code', 24px, 500, 28.8px, #3DCFB6);
+//             }
+//             >input, textarea {
+//                 background: none;
+//                 border: none;
+//                 outline: none;
+//                 width: 100%;
+//                 resize: none;
+//                 @include styleFont('Karla', 18px, 400, 21.6px, rgba(255, 255, 255));
+//             }
+//             >input::placeholder, textarea::placeholder {
+//                 @include styleFont('Karla', 18px, 400, 21.6px, rgba(255, 255, 255, 0.8));
+//             }
             
-        }
-    }
-}
+//         }
+//     }
+// }
 
-.border-bottom {
-    border-bottom: 1px solid rgba(61, 207, 182, 1);
-}
+// .border-bottom {
+//     border-bottom: 1px solid rgba(61, 207, 182, 1);
+// }
 
-h2, h3, h4, p {
-    margin: 0;
-}
+// h2, h3, h4, p {
+//     margin: 0;
+// }
 
-.checkBox-privacy-police {
-    width: 100%;
-    padding: 32px 0;
-    @include flexBox(column, flex-start, flex-start, 8px);
-    >div {
-        @include flexBox(row, flex-start, center, 8px);
-        >span {
-            @include styleFont('Karla', 15px, 400, 18px, #FFFF);
-            >span {
-                @include styleFont('Fira Code', 15px, 400, 18px, #3DCFB6);
-                letter-spacing: -3%;
-            }
-        }
-    }
-}
+// .checkBox-privacy-police {
+//     width: 100%;
+//     padding: 32px 0;
+//     @include flexBox(column, flex-start, flex-start, 8px);
+//     >div {
+//         @include flexBox(row, flex-start, center, 8px);
+//         >span {
+//             @include styleFont('Karla', 15px, 400, 18px, #FFFF);
+//             >span {
+//                 @include styleFont('Fira Code', 15px, 400, 18px, #3DCFB6);
+//                 letter-spacing: -3%;
+//             }
+//         }
+//     }
+// }
 
-.warning {
-    height: 17px;
-    >span {
-        color: #EC7B7B !important;
-    }
-}
+// .warning {
+//     height: 17px;
+//     >span {
+//         color: #EC7B7B !important;
+//     }
+// }
 
-.checked {
-    @include checkBox('./../../../assets/img/Check_mark.png', './../../../assets/img/Property 1=Default hover.png');
-}
+// .checked {
+//     @include checkBox('./../../../assets/img/Check_mark.png', './../../../assets/img/Property 1=Default hover.png');
+// }
 
-.unchecked {
-    @include checkBox('./../../../assets/img/Checked_mark.png', './../../../assets/img/Property\ 1=Checked\ hover.png'
-);
-}
+// .unchecked {
+//     @include checkBox('./../../../assets/img/Checked_mark.png', './../../../assets/img/Property\ 1=Checked\ hover.png'
+// );
+// }
 
-input[type="submit"] {
-    padding: 12px 24px;
-    border: 1px solid #FFF;
-    border-radius: 100px;
-}
+// input[type="submit"] {
+//     padding: 12px 24px;
+//     border: 1px solid #FFF;
+//     border-radius: 100px;
+// }
+
+
+
+
+
+// .form-group {
+//     margin-bottom: 1.5rem;
+//   }
+  
+//   input,
+//   textarea {
+//     width: 100%;
+//     padding: 0.5rem;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+//     font-size: 1rem;
+//   }
+  
+//   textarea {
+//     resize: vertical;
+//   }
+  
+//   .checkbox-label {
+//     display: flex;
+//     align-items: center;
+//     font-size: 0.9rem;
+//   }
+  
+//   .checkbox-label input {
+//     margin-right: 0.5rem;
+//   }
+  
+//   .custom-checkbox {
+//     width: 1rem;
+//     height: 1rem;
+//     background-color: #fff;
+//     border: 1px solid #ccc;
+//     display: inline-block;
+//     margin-right: 0.5rem;
+//   }
+  
+//   button {
+//     background-color: #007bff;
+//     color: white;
+//     padding: 0.5rem 1rem;
+//     border: none;
+//     border-radius: 4px;
+//     cursor: pointer;
+//     font-size: 1rem;
+//   }
+  
+//   button:disabled {
+//     background-color: #ccc;
+//     cursor: not-allowed;
+//   }
+  
+//   .error {
+//     color: red;
+//     font-size: 0.8rem;
+//     margin-top: 0.5rem;
+//   }
+  

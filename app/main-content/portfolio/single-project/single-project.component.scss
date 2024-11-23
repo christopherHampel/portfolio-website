@@ -72,8 +72,45 @@
     left: 23px;
 }
 
-dialogConfig {
-    position: absolute;
-    top: 100px;
-    left: 50px;
+@media(max-width: 1400px) {
+    .project {
+        >div {
+            padding-left: 0;
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+        }
+    }
+}
+
+@media(max-width: 1000px) {
+    .project-description {
+        width: 568px;
+    }
+}
+
+@media(max-width: 650px) {
+    .project {
+        >div {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    
+    .project-description {
+        width: 400px;
+    }
+}
+
+@media(max-width: 450px) {
+    .project-description {
+        width: 290px;
+    }
+
+    .hover-image {
+        opacity: 0;
+        height: 0;
+        width: 0;
+        overflow: hidden; 
+    }
 }

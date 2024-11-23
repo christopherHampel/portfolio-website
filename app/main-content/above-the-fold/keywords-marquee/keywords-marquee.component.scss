@@ -2,6 +2,7 @@
     display: flex;
     gap: 56px;
     position: relative;
+    right: 1px;
     z-index: 1;
     align-items: center;
     padding: 12px 32px;
@@ -45,8 +46,8 @@
     }
 }
 
-@media(max-width: 830px) {
-    .marquee {
-        display: none;
-    }
-}
+// @media(max-width: 830px) {
+//     .marquee {
+//         display: none;
+//     }
+// }
