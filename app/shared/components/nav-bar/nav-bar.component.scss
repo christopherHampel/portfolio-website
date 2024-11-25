@@ -13,9 +13,6 @@ nav {
 .nav-area {
     position: relative;
     opacity: 1;
-    // >div {
-    //     position: absolute;
-    // }
 }
 
 .nav-responsive {
@@ -111,7 +108,7 @@ nav {
     }
 }
 
-//
+// //
 
 @media(max-width: 900px) {
     .nav-links {
@@ -140,10 +137,10 @@ nav {
         opacity: 1;
     }
 
-    .nav-links {
-        >img {
-            position: static;
-            display: none;
-        }
-    }
+    // .nav-links {
+    //     >img {
+    //         position: static;
+    //         display: none;
+    //     }
+    // }
 }
