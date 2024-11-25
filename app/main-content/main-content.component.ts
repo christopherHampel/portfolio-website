@@ -6,7 +6,6 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
 import { FooterComponent } from '../shared/components/footer/footer.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
-import { NavBarComponent } from '../shared/components/nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-main-content',
@@ -18,7 +17,6 @@ import { NavBarComponent } from '../shared/components/nav-bar/nav-bar.component'
               EvaluationComponent, 
               FooterComponent,
               ContactMeComponent,
-              NavBarComponent,
             ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss',

@@ -1,6 +1,7 @@
 <nav class="max-width">
     <div class="nav-area">
-        <div class="links">
+        <!-- <div class="links"> -->
+            <div [ngClass]="isMenuOpen ? 'responsive-menu' : 'links'">
 
             <div [ngClass]="english ? 'english' : 'german'" (click)="toggleLanguage()" class="toggle-language"></div>
     
@@ -26,7 +27,26 @@
             
         </div>
 
-        <div class="nav-responsive"></div>
+        <div (click)="toggleResponsiveMenu()" class="nav-responsive"></div>
+
+        <!-- Responsive Menu -->
+        <!-- <div *ngIf="isMenuOpen" class="responsive-menu">
+            <div [ngClass]="english ? 'english' : 'german'" (click)="toggleLanguage()" class="toggle-language"></div>
+            
+            <div class="nav-links">
+                <a href="#">About me</a>
+            </div>
+            <div class="nav-links">
+                <a href="#">Skills</a>
+            </div>
+            <div class="nav-links">
+                <a href="#">Projects</a>
+            </div>
+            <div class="nav-links">
+                <a href="#contact-me">Contact me</a>
+            </div>
+        </div> -->
+
     </div>
 
     <div>

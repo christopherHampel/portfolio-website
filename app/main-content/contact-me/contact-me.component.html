@@ -48,7 +48,8 @@
             <!-- Message Field -->
             <div class="form-group">
               <label for="message">How can I help you?</label>
-              <textarea
+              <textarea rows="1"
+                (keyup)="autoGrowTextZone($event)"
                 id="message"
                 formControlName="message"
                 placeholder="What do you need to develop?"
@@ -59,57 +60,30 @@
             </div>
           
             <!-- Privacy Policy Checkbox -->
-            <div class="form-group">
-              <label class="checkbox-label">
+            <div class="form-group responsive-checkbox">
+                <label class="checkbox-label">
                 <input
-                  type="checkbox"
-                  formControlName="privacyPolicy"
+                    type="checkbox"
+                    formControlName="privacyPolicy"
                 />
-                <span class="custom-checkbox"></span>
-                I've read the privacy policy and agree to the processing of my data as outlined.
-              </label>
-              <div *ngIf="privacyPolicy.invalid && (privacyPolicy.dirty || privacyPolicy.touched)" class="error">
-                Please accept the privacy policy.
-              </div>
+                <span class="custom-checkbox">
+                    <img src="assets/img/Check_mark.png" alt="Unchecked" class="unchecked" />
+                    <img src="assets/img/Checked_mark.png" alt="Checked" class="checked" />
+                </span>
+                <span class="checkbox-description">
+                    I've read the <a href="/imprint">privacy policy </a>and agree to the processing of my data as outlined.
+                </span>
+                </label>
+                <div class="privacy-police-button">
+                    <div *ngIf="privacyPolicy.invalid && (privacyPolicy.dirty || privacyPolicy.touched)" class="error">
+                        Please accept the privacy policy.
+                    </div>
+                    <div>
+                      <button type="submit" [disabled]="contactForm.invalid"><span>Contact me :)</span></button>
+                    </div>
+                </div>
             </div>
-          
-            <!-- Submit Button -->
-            <button type="submit" [disabled]="contactForm.invalid">
-              Submit
-            </button>
           </form>
-          
-
-        <!-- <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-
-            <div class="input-field">
-                <label for="name">What's your name?</label>
-                <input [(ngModel)]="contactData.name" type="name" id="name" name="name" placeholder="Your name goes here" required>
-            </div>
-
-            <div class="input-field">
-                <label for="email">What's your email?</label>
-                <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="youremail@email.com" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
-            </div>
-            
-            <div class="border-bottom input-field">
-                <label for="message">How I can help you?</label>
-                <textarea [(ngModel)]="contactData.message" name="message" id="message" placeholder="Hello Lukas, I am interested in..." required></textarea>
-            </div>
-
-            <div class="checkBox-privacy-police">
-                <div>
-                    <div (click)="checkPrivacyPolice()" [ngClass]="privacyPolice ? 'unchecked' : 'checked'"></div>
-                    <span>I've read the <span>privacy policy </span>agree to the processing of my data as outlined.</span>
-                </div>
-                <div class="warning">
-                    <span [ngStyle]="privacyPolice ? { 'display': 'none' } : { 'display': 'block' }">Please accept the privacy policy.</span>
-                </div>
-            </div>
-
-            <input type="submit" value="Say hello ;)">
-          
-        </form> -->
     </div>
 
 </section>

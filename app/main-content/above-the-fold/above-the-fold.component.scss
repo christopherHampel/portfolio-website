@@ -1,15 +1,15 @@
 @import './../../../styles.scss';
 
 @mixin iconHover($bgImage, $bgImageHover, $width, $height) {
-    transition: all 25ms ease-in;
+    // transition: all 25ms ease-in;
     width: $width;
     height: $height;
     background-image: $bgImage;
     background-repeat: no-repeat;
     background-position: center;
-    &:hover {
-        background-image: $bgImageHover;
-    }
+    // &:hover {
+    //     background-image: $bgImageHover;
+    // }
 }
 
 section {
@@ -26,6 +26,7 @@ section {
 
 .bg-above-the-fold {
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+    width: fit-content;
 }
 
 app-keywords-marquee {
@@ -92,7 +93,15 @@ app-keywords-marquee {
 }
 
 .linkedin-icon {
+    // @include iconHover(url('./../../../assets/img/Linkedin.png'), url('./../../../assets/img/Linkedin\ Hover.png'), 64px, 32px);
     @include iconHover(url('./../../../assets/img/Linkedin.png'), url('./../../../assets/img/Linkedin\ Hover.png'), 64px, 32px);
+    // background-position: left;
+
+    &:hover {
+        background-image: url('./../../../assets/img/Linkedin\ Hover.png');
+        background-repeat: no-repeat;
+        background-position: right;
+    }
 }
 
 @media(max-width: 1440px) {
@@ -103,13 +112,21 @@ app-keywords-marquee {
     }
 }
 
-@media(max-width: 900px) {
+@media(max-width: 900px) or (max-height: 1000px) {
     .right-leteral-vector {
         height: 100px;
     }
+
+    .left-leteral-vector {
+        height: 150px;
+    }
+
+    .leterals {
+        padding-left: 12px;
+    }
 }
 
-@media(max-width: 750px) {
+@media(max-width: 750px) or (max-height: 1000px) {
     .contact-email {
         display: none;
     }
@@ -119,7 +136,7 @@ app-keywords-marquee {
     }
 }
 
-@media(max-width: 550px) {
+@media(max-width: 550px) or (max-height: 900px) {
     .left-leteral {
         >.left-leteral-vector {
             height: 100px;

@@ -1,7 +1,8 @@
 @import './../../../../styles.scss';
 
 footer {
-    padding: 80px 96px;
+    width: 100%;
+    padding: 80px 0;
     >div {
         @include flexBox(row, space-between, center, 0);
     }
@@ -41,4 +42,41 @@ footer {
 
 .footer-link:hover .hover-effect {
     opacity: 1;
+}
+
+.d-none {
+    visibility: hidden;
+    position: fixed;
+    bottom: 0;
+}
+
+@media(max-width: 1440px) {
+    footer {
+        padding: 80px 40px;
+    }
+}
+
+@media(max-width: 650px) {
+    footer {
+        @include flexBox(column, flex-start, flex-start, 40px);
+        >div {
+            gap: 40px;
+            width: 100%;
+        }
+    }
+    .no-responsive {
+        visibility: hidden;
+        position: fixed;
+        bottom: 0;
+    }
+
+    .copyright {
+        justify-content: center !important;
+        gap: 16px !important;
+    }
+
+    .d-none {
+        position: static;
+        visibility: visible;
+    }
 }

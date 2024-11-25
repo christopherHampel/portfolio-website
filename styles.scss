@@ -173,6 +173,12 @@ h3 {
   }
 }
 
+@media(max-width: 600px) {
+  .max-width {
+    width: 400px;
+  }
+}
+
 @media(max-width: 400px) {
   .main-button {
     padding: 8px 16px;
