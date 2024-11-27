@@ -7,9 +7,10 @@
     background-image: $bgImage;
     background-repeat: no-repeat;
     background-position: center;
-    // &:hover {
-    //     background-image: $bgImageHover;
-    // }
+
+    &:hover {
+        background-image: $bgImageHover;
+    }
 }
 
 section {
@@ -72,14 +73,34 @@ app-keywords-marquee {
     }
 }
 
-.responsive-contact-icon {
-    @include iconHover(url('./../../../assets/img/contact_icon.png'), url('./../../../assets/img/Mail\ Hover.png'), 64px, 32px);
-    display: none;
+// .responsive-contact-icon {
+//     @include iconHover(url('./../../../assets/img/contact_icon.png'), url('./../../../assets/img/Mail\ Hover.png'), 64px, 32px);
+//     display: none;
+// }
+
+.arrow-container {
+    position: relative;
+    display: inline-block;
 }
 
-.scroll-down {
-    // transition: all 500ms ease-in;
-    @include iconHover(url('./../../../assets/img/scroll_down_icon.png'), url('./../../../assets/img/scroll_down_hover.png'), 32px, 48px);
+.single-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: moveScrolldown .75s linear infinite;
+}
+
+@keyframes moveScrolldown {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        transform: translate(-50%, -0%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
 }
 
 .right-leteral-vector {
@@ -87,21 +108,53 @@ app-keywords-marquee {
     border: 1px solid #FFFF;
 }
 
-.github-icon {
-    @include iconHover(url('./../../../assets/img/Github.png'), url('./../../../assets/img/Github_hover.png'), 64px, 32px);
+// .github-icon {
+//     @include iconHover(url('./../../../assets/img/Github.png'), url('./../../../assets/img/Github_hover.png'), 64px, 32px);
+// }
+
+// .linkedin-icon {
+//     @include iconHover(
+//         url('./../../../assets/img/Linkedin.png'), 
+//         url('./../../../assets/img/Linkedin\ Hover.png'), 
+//         32px, 
+//         32px);
+
+//     // &:hover {
+//     //     background-image: url('./../../../assets/img/Linkedin\ Hover.png');
+//     //     background-repeat: no-repeat;
+//     //     background-position: right;
+//     // }
+// }
+//
+
+.social-icon {
+    position: relative;
+    min-width: 32px;
+    height: 32px;
 }
 
-.linkedin-icon {
-    // @include iconHover(url('./../../../assets/img/Linkedin.png'), url('./../../../assets/img/Linkedin\ Hover.png'), 64px, 32px);
-    @include iconHover(url('./../../../assets/img/Linkedin.png'), url('./../../../assets/img/Linkedin\ Hover.png'), 64px, 32px);
-    // background-position: left;
-
-    &:hover {
-        background-image: url('./../../../assets/img/Linkedin\ Hover.png');
-        background-repeat: no-repeat;
-        background-position: right;
-    }
+.social-icon img {
+    position: absolute;
+    top: 0;
 }
+
+.icon-hover {
+    opacity: 0; /* Hover-Bild ist standardmäßig unsichtbar */
+}
+
+.social-icon:hover .icon-hover {
+    opacity: 1; /* Hover-Bild wird sichtbar */
+}
+
+.social-icon:hover .icon {
+    opacity: 0; /* Originalbild wird unsichtbar */
+}
+//
+// .social-icon {
+//     position: relative;
+//     width: 64px;
+//     height: 32px;
+// }
 
 @media(max-width: 1440px) {
     .leterals {
@@ -140,5 +193,13 @@ app-keywords-marquee {
         >.left-leteral-vector {
             height: 100px;
         }
+    }
+
+    .right-leteral {
+        gap: 8px;
+    }
+
+    .leterals {
+        padding-right: 0;
     }
 }

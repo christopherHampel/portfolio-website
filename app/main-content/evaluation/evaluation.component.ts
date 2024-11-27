@@ -10,7 +10,7 @@ import { CommonModule, NgFor } from '@angular/common';
 })
 export class EvaluationComponent{
 
-  carouselStart:boolean = false;
+  carouselStarted:boolean = false;
 
   evaluations: {name:string; review:string}[] = [
 
@@ -32,11 +32,22 @@ export class EvaluationComponent{
   positionEllipse = ['normal-ellipse','highlight-ellipse', 'normal-ellipse']
 
   nextEvaluation() {
-    this.positionClasses.unshift(this.positionClasses.pop()!);
+    this.carouselStarted = true;
+    this.evaluations.unshift(this.evaluations.pop()!);
     this.positionEllipse.unshift(this.positionEllipse.pop()!);
   }
 
   getPositionClass(index: number) {
+    // if(index == 0) {
+    //   // return 'left-box';
+    //   return {'transform': 'translateX(calc(-100% - 60px))'}
+    // } else if(index == 1) {
+    //   // return 'middle-box';
+    //   return {'transform': 'translateX(0)'}
+    // } else {
+    //   return 'right-box';
+    //   return {'transform': 'translateX(calc(100% + 60px))'}
+    // }
     return this.positionClasses[index];
   }
 

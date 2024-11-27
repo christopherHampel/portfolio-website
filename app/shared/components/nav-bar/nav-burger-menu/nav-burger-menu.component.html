@@ -1,0 +1,18 @@
+<div [ngClass]="isMenuOpen ? 'burger-menu-bg' : 'links'" (click)="toggleResponsiveMenu()">
+    <div *ngIf="isMenuOpen" class="responsive-menu">
+        <!-- <div (click)="toggleLanguage()" class="toggle-language"></div> -->
+        
+        <div class="nav-links">
+            <a href="#">About me</a>
+        </div>
+        <div class="nav-links">
+            <a href="#">Skills</a>
+        </div>
+        <div class="nav-links">
+            <a href="#">Projects</a>
+        </div>
+        <div class="nav-links">
+            <a href="#contact-me">Contact me</a>
+        </div>
+    </div>
+</div>

@@ -26,9 +26,12 @@
                 formControlName="name"
                 placeholder="Your name goes here"
               />
-              <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
-                Oops! it seems your name is missing
+              <div *ngIf="name.touched && name.invalid" class="error">
+                Oops! It seems your name is missing
               </div>
+              <!-- <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+                Oops! it seems your name is missing
+              </div> -->
             </div>
           
             <!-- Email Field -->

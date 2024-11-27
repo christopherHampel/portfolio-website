@@ -4,7 +4,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { TechnologiesComponent } from './technologies/technologies.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
-import { FooterComponent } from '../shared/components/footer/footer.component';
+import { FooterComponent } from '../shared/footer/footer.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
 
 @Component({

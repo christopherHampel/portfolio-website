@@ -10,9 +10,32 @@ nav {
     z-index: 999;
 }
 
+.rightside-nav {
+    @include flexBox(row, center, center, 0);
+    position: relative;
+    min-width: 100px;
+    min-height: 100px;
+    >.logo-normal {
+        position: absolute;
+    }
+    >.burger-button {
+        position: absolute;
+        visibility: hidden;
+    }
+}
+
 .nav-area {
     position: relative;
     opacity: 1;
+}
+
+.burger-menu-bg {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .nav-responsive {
@@ -125,7 +148,7 @@ nav {
     }
 
     .nav-area {
-        display: flex;
+        position: absolute;
     }
 
     .links {
@@ -137,10 +160,15 @@ nav {
         opacity: 1;
     }
 
-    // .nav-links {
-    //     >img {
-    //         position: static;
-    //         display: none;
-    //     }
-    // }
+    .rightside-nav {
+        width: 100%;
+        @include flexBox(row, space-between, center, 0);
+        >.logo-normal {
+            position: static;
+        }
+        >.burger-button {
+            visibility: visible;
+            position: static;
+        }
+    }
 }

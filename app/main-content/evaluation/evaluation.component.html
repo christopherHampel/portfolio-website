@@ -3,32 +3,20 @@
         <h2>What my colleagues say about me</h2>
     </div>
 
-    <div class="evaluations-carousel">
+    <div class="evaluations-carousel max-width">
         <div>
             @for (review of evaluations; track $index) {
                 <div class="review-box" 
-                [ngClass]="getPositionClass($index)">
-                    <span>{{ review.review }}</span>
+                [ngClass]="carouselStarted ? getPositionClass($index) : ''">
+                <span>{{ review.review }}</span>
                     <div class="review-author">
                         <div></div>
                         <span>{{ review.name }}</span>
                     </div>
                 </div>
 
-                <div class="blur-effect"></div>
+                <!-- <div class="blur-effect"></div> -->
             }
-            <!-- @for (review of evaluations; track $index) {
-                <div class="review-box-shadow" 
-                [ngClass]="getPositionClass($index)">
-                    <span>{{ review.review }}</span>
-                    <div class="review-author">
-                        <div></div>
-                        <span>{{ review.name }}</span>
-                    </div>
-                </div>
-
-                <div class="blur-effect"></div>
-            } -->
         </div>
     </div>
 

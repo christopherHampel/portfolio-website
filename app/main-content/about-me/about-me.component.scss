@@ -77,7 +77,8 @@ section {
     }
 
     .profile-image {
-        position: static;
+        z-index: 5;
+        position: relative;
     }
 }
 
