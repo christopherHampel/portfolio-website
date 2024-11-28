@@ -46,8 +46,10 @@
     }
 }
 
-// @media(max-width: 830px) {
-//     .marquee {
-//         display: none;
-//     }
-// }
+@media(max-width: 500px) {
+    .marquee-content {
+        >span {
+            font-size: 24px;
+        }
+    }
+}

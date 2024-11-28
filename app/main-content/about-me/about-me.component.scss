@@ -93,6 +93,24 @@ section {
     }
 }
 
+@media(max-width: 500px) {
+    .content-about-me {
+        >span {
+            font-size: 16px;
+            line-height: 19.2px;
+        }
+    }
+
+    .enumerations-about-me {
+        >div {
+            >span {
+                font-size: 16px;
+                line-height: 19.2px;
+            }
+        }
+    }
+}
+
 @media(max-width: 450px) {
     .profile-image-size {
         width: 358px;

@@ -18,10 +18,11 @@ nav {
     >.logo-normal {
         position: absolute;
     }
-    >.burger-button {
-        position: absolute;
-        visibility: hidden;
-    }
+}
+
+.burger-button {
+    position: absolute;
+    visibility: hidden;
 }
 
 .nav-area {
@@ -95,44 +96,6 @@ nav {
     @include iconHover(url('./../../../../assets/img/language_switch_german.png'), url('./../../../../assets/img/language_switch_german_hover.png'), 84px, 28px);
 }
 
-
-//
-/* Styles for the responsive menu */
-.responsive-menu {
-    position: absolute;
-    top: 100px;
-    right: 0;
-    background-color: #333;
-    color: white;
-    width: 200px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    animation: slideIn 300ms ease-in-out;
-
-    .nav-links {
-        > a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-    }
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-// //
-
 @media(max-width: 900px) {
     .nav-links {
         >a {
@@ -166,9 +129,10 @@ nav {
         >.logo-normal {
             position: static;
         }
-        >.burger-button {
-            visibility: visible;
-            position: static;
-        }
+    }
+
+    .burger-button {
+        visibility: visible;
+        position: static;
     }
 }

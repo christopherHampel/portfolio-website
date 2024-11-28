@@ -100,3 +100,41 @@
         height: 100%;
     }
 }
+
+@media(max-width: 1200px) {
+    .dialog-content {
+        flex-direction: column-reverse;
+        overflow-y: auto;
+        height: 80%;
+        gap: 0;
+    }
+
+    .image-and-dialog-steering {
+        padding: 0;
+        gap: 0;
+    }
+
+    .project-details {
+        padding: 0;
+    }
+
+    .dialog-image {
+        width: 342px;
+        height: 216px;
+    }
+
+    .number-and-name {
+        >h4 {
+            font-size: 72px;
+            line-height: 72px;
+        }
+        >span {
+            font-size: 56px;
+            line-height: 44.8px;
+        }
+    }
+
+    .project-description {
+        gap: 16px;
+    }
+}
