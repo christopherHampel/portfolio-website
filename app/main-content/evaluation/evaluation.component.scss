@@ -12,19 +12,22 @@
 }
 
 .evaluations-carousel {
-    >div {
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        gap: 80px;
-    }
+    height: 400px;
+    transition: transform 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
 }
+
 
 .review-box {
     flex-shrink: 0;
-    min-height: 248px;
+    // min-height: 248px;
+    height: 300px;
     width: 600px;
+    position: absolute;
     background-color: #26524B;
     @include flexBox(column, center, flex-start, 64px);
     @include styleFont('Karla', 18px, 400, 21.6px, #FFFF);
@@ -32,33 +35,51 @@
     border: 1px solid #3DCFB6;
     border-radius: 24px;
     transition: transform 1s ease-in-out;
-    >.review-author {
+    >div {
         width: 100%;
-        @include flexBox(row, flex-start, center, 16px);
-        >div {
-            flex: 1;
-            height: 1px;
-            background-color: #FFFF;
-        }
+        display: flex;
+        flex-direction: column;
+        gap:16px;
+    }
+    // >.review-author {
+    //     width: 100%;
+    //     @include flexBox(row, flex-start, center, 16px);
+    //     >div {
+    //         flex: 1;
+    //         height: 1px;
+    //         background-color: #FFFF;
+    //     }
+    // }
+}
+
+.review-name {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    >div {
+        flex: 1;
+        height: 1px;
+        width: 100%;
+        background-color: #FFFF;
     }
 }
 
-// .blur-effect {
-//     position: absolute;
-//     top: 16.5px;
-//     overflow: hidden;
-//     z-index: 5;
-//     height: 248px;
-//     width: 1440px;
-//     pointer-events: none;
-//     background: linear-gradient(
-//         to right, 
-//         rgba(0, 0, 0, 0.5) 0%,
-//         rgba(255, 255, 255, 0) 10%,
-//         rgba(255, 255, 255, 0) 90%,
-//         rgba(0, 0, 0, 0.5) 100% 
-//     );
-// }
+.blur-effect {
+    position: absolute;
+    top: 16.5px;
+    overflow: hidden;
+    z-index: 5;
+    height: 248px;
+    width: 1440px;
+    pointer-events: none;
+    background: linear-gradient(
+        to right, 
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(255, 255, 255, 0) 10%,
+        rgba(255, 255, 255, 0) 90%,
+        rgba(0, 0, 0, 0.5) 100% 
+    );
+}
 
 .ellipse-container {
     height: 100%;
@@ -77,27 +98,18 @@
 }
 
 .left-box {
-    transform: translateX(calc(200% + 160px));
-    // top: 16.5px;
-    // z-index: 3;
-    // >span {
-    //     overflow: hidden;
-    // }
+    transform: translateX(calc(-100% - 60px));
+    z-index: 2;
 }
 
 .middle-box {
     transform: translateX(0);
-    // height: 274px; 
-    // z-index: 2;
+    z-index: 2;
 }
 
 .right-box {
-    transform: translateX(calc(-200% - 160px));
-    // top: 16.5px;
-    // z-index: 1;
-    // >span {
-    //     overflow: hidden;
-    // }
+    transform: translateX(calc(+100% + 60px));
+    z-index: 1;
 }
 
 .normal-ellipse {

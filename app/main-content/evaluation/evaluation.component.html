@@ -4,21 +4,24 @@
     </div>
 
     <div class="evaluations-carousel max-width">
-        <div>
-            @for (review of evaluations; track $index) {
-                <div class="review-box" 
-                [ngClass]="carouselStarted ? getPositionClass($index) : ''">
-                <span>{{ review.review }}</span>
-                    <div class="review-author">
+        @for (review of evaluations; track $index) {
+            <div class="review-box" [ngClass]="carouselStarted ? getPosition($index) : ''">
+                <div class="content">
+                    <span>{{ review.review }}</span>
+                    <div class="review-name">
                         <div></div>
                         <span>{{ review.name }}</span>
                     </div>
                 </div>
-
-                <!-- <div class="blur-effect"></div> -->
-            }
-        </div>
+            </div>
+        
+            <!-- <div class="blur-effect"></div> -->
+        }
     </div>
+
+    <!-- [ngClass]="carouselStarted ? getPositionClass($index) : ''" -->
+    <!-- <div class="review-box" [ngStyle]="carouselStarted ? getPosition($index) : {}"> -->
+
 
     <div class="arrows-carousel">
         <div>

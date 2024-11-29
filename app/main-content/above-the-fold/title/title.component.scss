@@ -9,14 +9,11 @@
 }
 
 .buttons-title {
-    display: flex;
-    gap: 40px;
+    @include flexBox(row, flex-start, flex-start, 40px);
 }
 
 .title-description {
-    font-size: 40px;
-    font-family: 'Fira Code';
-    font-weight: 400;
+    @include styleFont('Fira Code', 40px, 400, 21.6px, #FFFF);
 }
 
 .title-name {
@@ -25,15 +22,11 @@
 }
 
 .title-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 48px;
+    @include flexBox(row, center, flex-start, 48px);
 }
 
 .gap-40 {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+    @include flexBox(column, flex-start, center, 40px);
 }
 
 .z-index-50 {
@@ -72,7 +65,7 @@
 
 @media(max-width: 700px) {
     .title-name {
-        font-size: 40px;
+        font-size: 32px;
         text-align: center;
         line-height: 62px;
     }

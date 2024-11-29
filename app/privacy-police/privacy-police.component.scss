@@ -1,0 +1,11 @@
+@import './../../styles.scss';
+
+h2 {
+    text-align: center;
+    padding-bottom: 24px;
+}
+
+p {
+    @include styleFont('Karla', 16px, 400, 21.6px, #FFFF);
+    padding-bottom: 24px;
+}

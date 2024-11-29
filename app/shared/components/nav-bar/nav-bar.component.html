@@ -2,25 +2,25 @@
     <div class="nav-area">
         <div class="links">
 
-            <div [ngClass]="english ? 'english' : 'german'" (click)="toggleLanguage()" class="toggle-language"></div>
+            <div (click)="changeLanguage('de')" [ngClass]="english ? 'english' : 'german'" (click)="toggleLanguage()" class="toggle-language"></div>
     
             <div class="nav-links">
-                <a href="#">About me</a>
+                <a href="#about-me">About me</a>
                 <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
             </div>
     
             <div class="nav-links">
-                <a href="#">Skills</a>
+                <a href="#technologies">Skills</a>
                 <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
             </div>        
             
             <div class="nav-links">
-                <a href="#">Projects</a>
+                <a href="#portfolio">Projects</a>
                 <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
             </div>        
             
             <div class="nav-links">
-                <a href="#contact-me">About me</a>
+                <a href="#contact-me">Contact me</a>
                 <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
             </div>
             
