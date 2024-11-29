@@ -12,13 +12,13 @@ import { TranslateModule, TranslateService } from "@ngx-translate/core";
 })
 export class AppComponent implements OnInit {
 
-  currentLanguage:string = 'de';
+  currentLanguage:string = 'en';
 
   languages = ["en", "de"];
   private translateService = inject(TranslateService);
 
   ngOnInit(): void {
-    const defaultLanguage = localStorage.getItem('language') || 'de';
+    const defaultLanguage = localStorage.getItem('language') || 'en';
     this.translateService.setDefaultLang(defaultLanguage);
     this.translateService.use(defaultLanguage);
   }

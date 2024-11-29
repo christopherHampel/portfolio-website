@@ -1,8 +1,71 @@
 {
-  "aboutme": {
-    "about-me": "Über mich"
+  "nav": {
+    "aboutme": "Über mich",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte",
+    "contact": "Kontakt"
   },
 
-  "title": "Hallo Welt"
+  "title": {
+    "button": {
+      "mywork": "Mein Portfolio",
+      "contact": "Kontakt"
+    }
+  },
+
+  "marquee": {
+    "location": "Wohnhaft in Fulda",
+    "work": "offen für remote work",
+    "interestings": "Interessiert in neue Technologien"
+  },
+
+  "aboutme": {
+    "headline": "Wer ich bin",
+    "subline": "Über mich",
+    "greeting": "Hallo, ich bin ein deutschsprachiger Frontend-Entwickler mit Sitz in München. Motiviert durch die grenzenlosen Möglichkeiten innerhalb der IT, freue ich mich darauf, visuell fesselnde und intuitive Websites und Anwendungen zu erstellen.",
+    "infoOne": "Flexible in terms of working environments, I can work effectively both on-site in Munich and remotely.",
+    "infoTwo": "Flexibel in Bezug auf die Arbeitsumgebung kann ich sowohl vor Ort in München als auch remote effektiv arbeiten.",
+    "infoThree": "In meinem Beruf geht es beim Programmieren nicht nur darum, Code zu schreiben; Es ist eine kreative Form der Problemlösung. Ich bin stolz auf meine Fähigkeit, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen umzuwandeln. So helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Visionen zum Leben zu erwecken."
+  },
+
+  "contact": {
+    "leftside": {
+      "headline": "Kontakt",
+      "signature": "Lassen Sie uns zusammenarbeiten",
+      "question": "Haben Sie ein Problem zu lösen?",
+      "paragraph": "Kontaktieren Sie mich über dieses Formular. Ich bin daran interessiert, von Ihnen zu hören, Ihre Ideen kennenzulernen und mit meiner Arbeit zu Ihren Projekten beizutragen.",
+      "paragraphTwo": "Brauchen Sie einen Frontend-Entwickler?",
+      "letstalk": "Lass uns reden!"
+    },
+    "rightside": {
+      "name": "Wie heißen Sie?",
+      "nameError": "Hoppla! Es scheint, dass Ihr Name fehlt",
+      "namePlaceholder": "Hier steht Ihr Name",
+      "email": "Wie lautet Ihre E-Mail?",
+      "emailError": "Hoppla! Ihre E-Mail-Adresse ist erforderlich",
+      "message": "Wie kann ich dir helfen?",
+      "messageError": "Was müssen Sie entwickeln?",
+      "messagePlaceholder": "Was müssen Sie entwickeln?",
+      "checkPrivacyFirst": "Ich habe die",
+      "checkPrivacySecond": "Datenschutzerklärung",
+      "checkPrivacyThird": "gelesen und bin mit der beschriebenen Verarbeitung meiner Daten einverstanden.",
+      "checkPrivacyError": "Bitte akzeptieren Sie die Datenschutzerklärung.",
+      "submit": "Kontaktieren Sie mich :)"
+    }
+  },
+
+  "evaluations": {
+    "reviewKaloyanIvanov": "Christopher hat bei unserem Teamprojekt durch sein eisernes Durchhaltevermögen auch in schwierige Phasen mit klaren Kopf und ruhiger Herangehensweise das Team sehr bereichert. Mit seiner Projekterfahrung im Frontend hat er einen entscheiden Teil für den Erfolg des Projekts gestemmt.  Danke für die erfolgreiche Zusammenarbeit Chris.",
+    "reviewManuelMannhold": "Die Zusammenarbeit mit Christopher war von Anfang an sehr angenehm. Er überzeugt durch seine Professionalität, lösungsorientiertes Denken und eine zuverlässige Arbeitsweise. Mit seiner offenen und freundlichen Art trägt er maßgeblich zu einer positiven Teamdynamik bei.",
+    "reviewColleague": "Keine aktuelle Bewertung"
+  },
+
+  "portfolio": {
+    "signature": "Ausgewählte Projekte",
+    "porfolioDescription": "Entdecken Sie hier eine Auswahl meiner Arbeiten. Interagieren Sie mit Projekten, um meine Fähigkeiten in Aktion zu sehen.",
+    "join": "Vom Kanban-System inspirierter Aufgabenmanager. Erstellen und organisieren Sie Aufgaben mithilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
+    "epl": "Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.",
+    "dabubble": "Diese App ist eine Slack-Clone-App. Es revolutioniert die Teamkommunikation und Zusammenarbeit mit seiner intuitiven Benutzeroberfläche, Echtzeit-Messaging und einer robusten Kanalorganisation."
   }
+}
   

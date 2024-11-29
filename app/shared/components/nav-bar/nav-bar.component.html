@@ -5,22 +5,22 @@
             <div (click)="changeLanguage('de')" [ngClass]="english ? 'english' : 'german'" (click)="toggleLanguage()" class="toggle-language"></div>
     
             <div class="nav-links">
-                <a href="#about-me">About me</a>
+                <a href="#about-me">{{ 'nav.aboutme' | translate }}</a>
                 <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
             </div>
     
             <div class="nav-links">
-                <a href="#technologies">Skills</a>
+                <a href="#technologies">{{ 'nav.skills' | translate }}</a>
                 <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
             </div>        
             
             <div class="nav-links">
-                <a href="#portfolio">Projects</a>
+                <a href="#portfolio">{{ 'nav.projects' | translate }}</a>
                 <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
             </div>        
             
             <div class="nav-links">
-                <a href="#contact-me">Contact me</a>
+                <a href="#contact-me">{{ 'nav.contact' | translate }}</a>
                 <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
             </div>
             

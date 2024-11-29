@@ -1,8 +1,71 @@
 {
-  "aboutme": {
-    "about-me": "About me test test"
-    },
+  "nav": {
+    "aboutme": "About me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact me"
+  },
 
-  "title": "Hello World"
+  "title": {
+    "button": {
+      "mywork": "My work",
+      "contact": "Contact me"
+    }
+  },
+
+  "marquee": {
+    "location": "Based in Fulda",
+    "work": "open for remote work",
+    "interestings": "interested in new technologies"
+  },
+
+  "aboutme": {
+    "headline": "Who I am",
+    "subline": "About me",
+    "greeting": "Hi, Im a german speaking Frontend Developer based in Munich. Motivated by the limitless opportunities within IT, I am excited about crafting visually captivating and intuitive websites and applications.",
+    "infoOne": "Flexible in terms of working environments, I can work effectively both on-site in Munich and remotely.",
+    "infoTwo": "I am open-minded and always looking for personal challenges to constantly improve my knowledge and skills.",
+    "infoThree": "In my profession, programming isn't just about writing code; it's a creative form of problem-solving. I take pride in my ability to distill complex technical challenges into simple, user-friendly solutions. This way, I help you achieve your goals and bring your visions to life."
+  },
+
+  "contact": {
+    "leftside": {
+      "headline": "Contact me",
+      "signature": "Let's work together",
+      "question": "Got a problem to solve?",
+      "paragraph": "Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.",
+      "paragraphTwo": "Need a Frontend developer?",
+      "letstalk": "Let’s talk!"
+    },
+    "rightside": {
+      "name": "What's your name?",
+      "nameError": "Oops! It seems your name is missing",
+      "namePlaceholder": "Your name goes here",
+      "email": "What's your email?",
+      "emailError": "Hoppla! your email is required",
+      "message": "How can I help you?",
+      "messageError": "What do you need to develop?",
+      "messagePlaceholder": "What do you need to develop?",
+      "checkPrivacyFirst": "I've read the",
+      "checkPrivacySecond": "privacy policy",
+      "checkPrivacyThird": "and agree to the processing of my data as outlined.",
+      "checkPrivacyError": "Please accept the privacy policy.",
+      "submit": "Contact me :)"
+    }
+  },
+
+  "evaluations": {
+    "reviewKaloyanIvanov": "Christopher greatly enriched the team in our team project with his iron stamina, even in difficult phases, with a clear head and calm approach. With his project experience in the front end, he played a decisive role in the success of the project.  Thank you for the successful cooperation Chris.",
+    "reviewManuelMannhold": "Working with Christopher was very pleasant from the start. He impresses with his professionalism, solution-oriented thinking and reliable way of working. With his open and friendly nature, he contributes significantly to positive team dynamics.",
+    "reviewColleague": "No current evaluation"
+  },
+
+  "portfolio": {
+    "signature": "Featured Projects",
+    "porfolioDescription": "Explore a selection of my work here - Interact with projects to see my skills in action.",
+    "join": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+    "epl": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+    "dabubble": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization."
   }
+}
   

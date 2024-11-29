@@ -2,14 +2,14 @@
 
     <div class="leftside">
         <div>
-            <h2>Contact me</h2>
-            <h3>Let's work together</h3>
+            <h2>{{ "contact.leftside.headline" | translate }}</h2>
+            <h3>{{ "contact.leftside.signature" | translate }}</h3>
         </div>
         <div class="description">
-            <h4>Got a problem to solve?</h4>
-            <p>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.</p>
+            <h4>{{ "contact.leftside.question" | translate }}</h4>
+            <p>{{ "contact.leftside.paragraph" | translate }}</p>
             <div class="last-paragraph">
-                <p> Need a Frontend developer? <span>Let’s talk!</span></p>
+                <p> {{ "contact.leftside.paragraphTwo" | translate }} <span>{{ "contact.leftside.letstalk" | translate }}</span></p>
             </div>
         </div>
     </div>
@@ -19,24 +19,21 @@
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
             <!-- Name Field -->
             <div class="form-group">
-              <label for="name">What's your name?</label>
+              <label for="name">{{ "contact.rightside.name" | translate }}</label>
               <input
                 id="name"
                 type="text"
                 formControlName="name"
-                placeholder="Your name goes here"
+                placeholder=""
               />
               <div *ngIf="name.touched && name.invalid" class="error">
-                Oops! It seems your name is missing
+                {{ "contact.rightside.nameError" | translate }}
               </div>
-              <!-- <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
-                Oops! it seems your name is missing
-              </div> -->
             </div>
           
             <!-- Email Field -->
             <div class="form-group">
-              <label for="email">What's your email?</label>
+              <label for="email">{{ "contact.rightside.email" | translate }}</label>
               <input
                 id="email"
                 type="email"
@@ -44,21 +41,21 @@
                 placeholder="youremail@email.com"
               />
               <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
-                Hoppla! your email is required
+                {{ "contact.rightside.emailError" | translate }}
               </div>
             </div>
           
             <!-- Message Field -->
             <div class="form-group">
-              <label for="message">How can I help you?</label>
+              <label for="message">{{ "contact.rightside.message" | translate }}</label>
               <textarea rows="1"
                 (keyup)="autoGrowTextZone($event)"
                 id="message"
                 formControlName="message"
-                placeholder="What do you need to develop?"
+                placeholder=""
               ></textarea>
               <div *ngIf="message.invalid && (message.dirty || message.touched)" class="error">
-                What do you need to develop?
+                {{ "contact.rightside.messageError" | translate }}
               </div>
             </div>
           
@@ -74,15 +71,15 @@
                     <img src="assets/img/Checked_mark.png" alt="Checked" class="checked" />
                 </span>
                 <span class="checkbox-description">
-                    I've read the <a href="/imprint">privacy policy </a>and agree to the processing of my data as outlined.
+                  {{ "contact.rightside.checkPrivacyFirst" | translate }} <a href="/imprint">{{ "contact.rightside.checkPrivacySecond" | translate }} </a>{{ "contact.rightside.checkPrivacyThird" | translate }}
                 </span>
                 </label>
                 <div class="privacy-police-button">
                     <div *ngIf="privacyPolicy.invalid && (privacyPolicy.dirty || privacyPolicy.touched)" class="error">
-                        Please accept the privacy policy.
+                      {{ "contact.rightside.checkPrivacyError" | translate }}
                     </div>
                     <div>
-                      <button type="submit" [disabled]="contactForm.invalid"><span>Contact me :)</span></button>
+                      <button type="submit" [disabled]="contactForm.invalid"><span>{{ "contact.rightside.submit" | translate }}</span></button>
                     </div>
                 </div>
             </div>

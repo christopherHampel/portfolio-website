@@ -1,34 +1,70 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SingleProjectComponent } from './single-project/single-project.component';
-// import { ProjectDialogComponent } from './project-dialog/project-dialog.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [ SingleProjectComponent ],
+  imports: [ SingleProjectComponent, TranslateModule ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent {
+
+  private translateService = inject(TranslateService);
+  private subscription = new Subscription();
 
   currentProjects = [
     {
       projectName: 'JOIN',
       projectSkills: 'ANGULAR | TYPESCRIPT | HTML | CSS | FIREBASE',
       projectImage: 'assets/img/join_image.png',
-      projectDescription: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+      projectDescription: '',
+      key: 'portfolio.join',
     },
     {
       projectName: 'EL POLLO LOCO',
       projectSkills: 'HTML | CSS | JAVASCRIPT',
       projectImage: 'assets/img/elpolloloco_image.png',
-      projectDescription: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+      projectDescription: '',
+      key: 'portfolio.epl',
     },
     {
       projectName: 'DA BUBBLE',
       projectSkills: 'Angular | TypeScript | FIREBASE',
       projectImage: 'assets/img/dabubble_image.png',
-      projectDescription: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
+      projectDescription: '',
+      key: 'portfolio.dabubble',
     },
   ];
+
+  constructor() {
+    this.initializeTranslations();
+    console.log(this.currentProjects);
+  }
+
+  initializeTranslations() {
+    const translationSubscription = this.translateService.onLangChange.subscribe(() => {
+      this.updateTranslations();
+    });
+    this.updateTranslations();
+    this.subscription.add(translationSubscription);
+  }
+
+  updateTranslations() {
+    this.currentProjects.forEach(project => {
+      if (project.key) {
+        this.translateService
+          .get(project.key)
+          .subscribe(translation => {
+            project.projectDescription = translation;
+          });
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }

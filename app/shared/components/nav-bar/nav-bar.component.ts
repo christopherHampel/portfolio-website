@@ -17,9 +17,6 @@ imports: [ NgClass, NavBurgerMenuComponent, TranslateModule ],
 export class NavBarComponent {
 
   currentLanguage:string = 'de';
-
-
-  // constructor(private appComponent: AppComponent) {}
   private translateService = inject(TranslateService);
 
   // changeLang() {

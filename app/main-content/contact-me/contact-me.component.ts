@@ -1,16 +1,19 @@
-import { CommonModule, NgClass, NgStyle } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, Validators, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [ FormsModule, CommonModule, ReactiveFormsModule ], 
+  imports: [ FormsModule, CommonModule, ReactiveFormsModule, TranslateModule ], 
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss'
 })
 export class ContactMeComponent {
+
+  private translateService = inject(TranslateService);
 
   http = inject(HttpClient);
   privacyPolice = false;

@@ -94,6 +94,10 @@
     height: 17px;
 }
 
+.error::after {
+    height: auto;
+}
+
 .checkbox-label input[type="checkbox"] {
     display: none;
   }

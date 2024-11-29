@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-evaluation',
   standalone: true,
-  imports: [ CommonModule ],
+  imports: [ CommonModule, TranslateModule ],
   templateUrl: './evaluation.component.html',
   styleUrl: './evaluation.component.scss'
 })
@@ -12,20 +14,63 @@ export class EvaluationComponent{
 
   carouselStarted:boolean = true;
 
-  evaluations: {name:string; review:string}[] = [
+  evaluations: {name:string; review:string; reviewKey:string}[] = [
     {
       name: 'Kaloyan Ivanov',
-      review: 'Christopher hat bei unserem Teamprojekt durch sein eisernes Durchhaltevermögen auch in schwierige Phasen mit klaren Kopf und ruhiger Herangehensweise das Team sehr bereichert. Mit seiner Projekterfahrung im Frontend hat er einen entscheiden Teil für den Erfolg des Projekts gestemmt.  Danke für die erfolgreiche Zusammenarbeit Chris. ',
+      review: '',
+      reviewKey: 'evaluations.reviewKaloyanIvanov',
     },
     {
       name: 'Manuel Mannhold',
-      review: 'Die Zusammenarbeit mit Christopher war von Anfang an sehr angenehm. Er überzeugt durch seine Professionalität, lösungsorientiertes Denken und eine zuverlässige Arbeitsweise. Mit seiner offenen und freundlichen Art trägt er maßgeblich zu einer positiven Teamdynamik bei.',
+      review: '',
+      reviewKey: 'evaluations.reviewManuelMannhold',
     },
     {
       name: 'No Colleague',
-      review: 'No current evaluation',
+      review: '',
+      reviewKey: 'evaluations.reviewColleague',
     },
   ];
+
+  private translateService = inject(TranslateService);
+  private subscription = new Subscription();
+
+  constructor() {
+    this.initializeTranslations();
+  }
+
+  initializeTranslations() {
+    // Erstellen eines Streams für Sprachänderungen
+    const translationSubscription = this.translateService.onLangChange.subscribe(() => {
+      this.updateTranslations();
+    });
+
+    // Direkt initiale Übersetzungen laden
+    this.updateTranslations();
+
+    // Subscription speichern, um sie bei Bedarf zu löschen
+    this.subscription.add(translationSubscription);
+  }
+
+  /**
+   * Aktualisiert die Übersetzungen basierend auf den aktuellen Sprachwerten
+   */
+  updateTranslations() {
+    this.evaluations.forEach(evaluation => {
+      if (evaluation.reviewKey) {
+        // Dynamisch die Übersetzung für den Key setzen
+        this.translateService
+          .get(evaluation.reviewKey)
+          .subscribe(translation => {
+            evaluation.review = translation;
+          });
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 
   positionEllipse = ['normal-ellipse','highlight-ellipse', 'normal-ellipse'];
   positionsBoxes = ['left-box', 'middle-box', 'right-box'];

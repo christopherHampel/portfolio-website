@@ -37,21 +37,4 @@ export class SingleProjectComponent {
       componentRef.destroy();
     };
   }
-
-  // showProjectDialog(index:number) {
-
-  //   console.log(index);
-
-  //   const componentRef: ComponentRef<ProjectDialogComponent> = this.viewContainerRef.createComponent(ProjectDialogComponent);
-
-  //   componentRef.instance.title = this.projectName;
-  //   componentRef.instance.skills = this.projectSkills;
-  //   componentRef.instance.image = this.projectImage;
-  //   componentRef.instance.description = this.projectDescription;
-  //   componentRef.instance.index = index;
-
-  //   componentRef.instance.closeDialog = () => {
-  //     componentRef.destroy();
-  //   };
-  // }
 }
