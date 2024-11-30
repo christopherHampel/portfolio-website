@@ -1,8 +1,8 @@
-<nav class="max-width">
+<nav>
     <div class="nav-area">
         <div class="links">
 
-            <div (click)="changeLanguage('de')" [ngClass]="english ? 'english' : 'german'" (click)="toggleLanguage()" class="toggle-language"></div>
+            <div (click)="changeLanguage()" [ngClass]="english ? 'english' : 'german'" class="toggle-language"></div>
     
             <div class="nav-links">
                 <a href="#about-me">{{ 'nav.aboutme' | translate }}</a>
@@ -32,7 +32,11 @@
         <img class="logo-normal" src="assets/img/angular_icon.png" alt="Logo">
         <div>
             <img (click)="toggleResponsiveMenu()" class="burger-button" src="assets/img/burgermenu_button.png" alt="">
-            <app-nav-burger-menu [isMenuOpen]="isMenuOpen" (menuToggle)="onMenuToggle($event)"></app-nav-burger-menu>
+            <app-nav-burger-menu 
+                [isMenuOpen]="isMenuOpen" 
+                [english]="english" 
+                (menuToggle)="onMenuToggle($event)"
+                (languageChange)="changeLanguage()"></app-nav-burger-menu>
         </div>
     </div>
 </nav>

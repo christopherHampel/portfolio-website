@@ -1,10 +1,7 @@
-import { CommonModule, NgClass, NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { NgClass, NgIf } from '@angular/common';
+import { Component, inject, ViewChild } from '@angular/core';
 import { NavBurgerMenuComponent } from './nav-burger-menu/nav-burger-menu.component';
-import { AppComponent } from '../../../app.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-
-CommonModule
 
 @Component({
   selector: 'app-nav-bar',
@@ -16,21 +13,24 @@ imports: [ NgClass, NavBurgerMenuComponent, TranslateModule ],
 })
 export class NavBarComponent {
 
-  currentLanguage:string = 'de';
-  private translateService = inject(TranslateService);
-
-  // changeLang() {
-  //   console.log(this.appComponent.changeLang());
-  // }
-
-  changeLanguage(language:string) {
-    this.currentLanguage = this.currentLanguage === 'en' ? 'de' : 'en';
-    this.translateService.use(this.currentLanguage);
-    // localStorage.setItem('language', this.currentLanguage);
+  constructor() {
+    const language = localStorage.getItem('english?');
+    this.english = language ? JSON.parse(language) : true;
+    console.log(this.english);
   }
 
   english:boolean = true;
   isMenuOpen: boolean = false;
+
+  currentLanguage:string = 'en';
+  private translateService = inject(TranslateService);
+
+  changeLanguage() {
+    this.toggleLanguage();
+    this.currentLanguage = this.currentLanguage === 'en' ? 'de' : 'en';
+    this.translateService.use(this.currentLanguage);
+    localStorage.setItem('language', this.currentLanguage);
+  }
 
   toggleLanguage() {
     if(this.english) {
@@ -38,6 +38,7 @@ export class NavBarComponent {
     } else {
       this.english = true;
     }
+    localStorage.setItem('english?', JSON.stringify(this.english));
   }
 
   toggleResponsiveMenu() {

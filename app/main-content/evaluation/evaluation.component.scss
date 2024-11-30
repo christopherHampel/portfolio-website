@@ -12,7 +12,7 @@
 }
 
 .evaluations-carousel {
-    height: 400px;
+    height: 360px;
     transition: transform 0.5s ease;
     position: relative;
     overflow: hidden;
@@ -24,32 +24,22 @@
 
 .review-box {
     flex-shrink: 0;
-    // min-height: 248px;
-    height: 300px;
+    height: 360px;
     width: 600px;
     position: absolute;
     background-color: #26524B;
     @include flexBox(column, center, flex-start, 64px);
     @include styleFont('Karla', 18px, 400, 21.6px, #FFFF);
-    padding: 48px;
+    padding: 40px;
     border: 1px solid #3DCFB6;
-    border-radius: 24px;
-    transition: transform 1s ease-in-out;
+    border-radius: 32px;
+    transition: transform 1s ease-out;
     >div {
         width: 100%;
         display: flex;
         flex-direction: column;
         gap:16px;
     }
-    // >.review-author {
-    //     width: 100%;
-    //     @include flexBox(row, flex-start, center, 16px);
-    //     >div {
-    //         flex: 1;
-    //         height: 1px;
-    //         background-color: #FFFF;
-    //     }
-    // }
 }
 
 .review-name {
@@ -66,10 +56,10 @@
 
 .blur-effect {
     position: absolute;
-    top: 16.5px;
+    // top: 16.5px;
     overflow: hidden;
     z-index: 5;
-    height: 248px;
+    height: 360px;
     width: 1440px;
     pointer-events: none;
     background: linear-gradient(
@@ -108,7 +98,7 @@
 }
 
 .right-box {
-    transform: translateX(calc(+100% + 60px));
+    transform: translateX(calc(100% + 60px));
     z-index: 1;
 }
 
@@ -126,11 +116,11 @@
     height: 8px;
 }
 
-// @media(max-width: 1440px) {
-//     .blur-effect {
-//         width: 100%;
-//     }
-// }
+@media(max-width: 1440px) {
+    .blur-effect {
+        width: 100%;
+    }
+}
 
 @media(max-width: 900px) {
     .review-box {
@@ -151,33 +141,36 @@
 }
 
 @media(max-width: 650px) {
+
     .review-box {
+        padding: 1em;
         width: 400px;
-        gap: 40px;
     }
 
     .left-box {
-        transform: translateX(calc(-100% - 32px));
+        transform: translateX(calc(-100% - 16px));
     }
     
     .right-box {
-        transform: translateX(calc(100% + 32px));
+        transform: translateX(calc(100% + 16px));
+    }
+
+    .width-responsive-450 {
+        width: 400px;
     }
 }
 
-@media(max-width: 500px) {
-
+@media(max-width: 450px) {
     .review-box {
-        width: 400px;
-        gap: 40px;
+        width: 300px;
+    }
+
+    .width-responsive-450 {
+        width: 280px;
     }
 }
 
 @media(max-width: 400px) {
-    .review-box {
-        width: 280px;
-        height: auto;
-    }
 
     .left-box {
         transform: translateX(calc(-100% - 8px));
@@ -185,5 +178,11 @@
     
     .right-box {
         transform: translateX(calc(100% + 8px));
+    }
+}
+
+@media(max-width: 350px) {
+    .review-box {
+        width: 280px;
     }
 }

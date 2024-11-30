@@ -25,3 +25,9 @@
         transform: translateX(0);
     }
 }
+
+@media(max-width: 550px) {
+    .responsive-menu {
+        padding: 40px 50px;
+    }
+}

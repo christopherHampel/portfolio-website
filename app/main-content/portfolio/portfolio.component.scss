@@ -1,7 +1,6 @@
 @import './../../../styles.scss';
 
 .portfolio {
-    // padding: 144px 112px;
     padding-bottom: 144px;
     @include flexBox(column, flex-start, center, 41px);
 }
@@ -13,6 +12,12 @@
     >span {
         width: 456px;
         @include styleFont('Karla', 18px, 400, 21.6px, #FFFF);
+    }
+}
+
+@media(max-width: 1440px) {
+    .portfolio {
+        padding-bottom: 72px;
     }
 }
 
@@ -34,6 +39,6 @@
 
 @media(max-width: 450px) {
     .portfolio-header {
-        width: 290px;
+        width: 280px;
     }
 }

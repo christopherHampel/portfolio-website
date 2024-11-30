@@ -106,7 +106,8 @@
         opacity: 0;
         height: 0;
         width: 0;
-        overflow: hidden; 
+        overflow: hidden;
+        visibility: hidden; 
     }
     
     .project-description {
@@ -116,12 +117,12 @@
 
 @media(max-width: 450px) {
     .project-description {
-        width: 290px;
+        width: 280px;
     }
 
     .project {
         >div {
-            padding-left: 0;
+            padding: 24px 0;
             position: relative;
             right: 0;
             transform: none;

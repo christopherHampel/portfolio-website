@@ -13,6 +13,11 @@
     }
 }
 
+.max-width-aot {
+    width: 1440px;
+    margin: 0 auto;
+}
+
 section {
     height: 100vh;
     display: flex;
@@ -73,11 +78,6 @@ app-keywords-marquee {
     }
 }
 
-// .responsive-contact-icon {
-//     @include iconHover(url('./../../../assets/img/contact_icon.png'), url('./../../../assets/img/Mail\ Hover.png'), 64px, 32px);
-//     display: none;
-// }
-
 .arrow-container {
     position: relative;
     display: inline-block;
@@ -132,6 +132,10 @@ app-keywords-marquee {
 }
 
 @media(max-width: 1440px) {
+    .max-width-aot {
+        width: 100%;
+    }
+
     .leterals {
         padding: 0 40px;
         width: 100%;
@@ -141,7 +145,7 @@ app-keywords-marquee {
 
 @media(max-width: 900px) or (max-height: 1000px) {
     .right-leteral-vector {
-        height: 120px;
+        height: 200px;
     }
 
     .left-leteral-vector {
@@ -160,6 +164,10 @@ app-keywords-marquee {
 
     .responsive-contact-icon {
         display: block;
+    }
+
+    .right-leteral-vector {
+        height: 120px;
     }
 }
 

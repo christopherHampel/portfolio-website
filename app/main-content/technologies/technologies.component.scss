@@ -2,7 +2,6 @@
 
 .technologies {
     @include flexBox(row, center, center, 80px);
-    padding-bottom: 144px;
 }
 
 .declarations-skill-set {
@@ -104,6 +103,7 @@
   @media(max-width: 1440px) {
     .technologies {
         flex-direction: column;
+        gap: 72px;
     }
 
     .declarations-skill-set {

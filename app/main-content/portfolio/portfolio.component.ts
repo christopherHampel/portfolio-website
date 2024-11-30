@@ -59,7 +59,7 @@ export class PortfolioComponent {
           .get(project.key)
           .subscribe(translation => {
             project.projectDescription = translation;
-          });
+        });
       }
     });
   }

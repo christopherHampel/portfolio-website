@@ -74,11 +74,16 @@ section {
         align-items: center;
         gap: 0;
         height: auto;
+        padding: 72px 0;
     }
 
     .profile-image {
         z-index: 5;
         position: relative;
+    }
+
+    .declarations-about-me {
+        padding-top: 72px;
     }
 }
 

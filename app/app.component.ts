@@ -12,7 +12,7 @@ import { TranslateModule, TranslateService } from "@ngx-translate/core";
 })
 export class AppComponent implements OnInit {
 
-  currentLanguage:string = 'en';
+  // currentLanguage:string = 'en';
 
   languages = ["en", "de"];
   private translateService = inject(TranslateService);
@@ -23,13 +23,13 @@ export class AppComponent implements OnInit {
     this.translateService.use(defaultLanguage);
   }
 
-  public changeLang(): string {
-    return 'Funktion in AppComponent wurde aufgerufen!';
-  }
+  // public changeLang(): string {
+  //   return 'Funktion in AppComponent wurde aufgerufen!';
+  // }
 
-  changeLanguage(language:string) {
-    this.currentLanguage = this.currentLanguage === 'en' ? 'de' : 'en';
-    this.translateService.use(this.currentLanguage);
-    // localStorage.setItem('language', this.currentLanguage);
-  }
+  // changeLanguage(language:string) {
+  //   this.currentLanguage = this.currentLanguage === 'en' ? 'de' : 'en';
+  //   this.translateService.use(this.currentLanguage);
+  //   // localStorage.setItem('language', this.currentLanguage);
+  // }
 }
