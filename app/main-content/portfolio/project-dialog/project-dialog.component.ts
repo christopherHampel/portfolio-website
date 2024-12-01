@@ -1,19 +1,24 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-project-dialog',
   standalone: true,
-  imports: [],
+  imports: [ TranslateModule ],
   templateUrl: './project-dialog.component.html',
   styleUrl: './project-dialog.component.scss'
 })
 export class ProjectDialogComponent {
+
+  private translateService = inject(TranslateService);
 
   @Input() currentProjects: any[] = [];
   @Input() title!: string;
   @Input() skills!: string;
   @Input() image!: string;
   @Input() description!: string;
+  @Input() projectLink!: string;
+  @Input() githubLink!: string;
   @Input() index!: number;
 
   closeDialog: () => void = () => {};

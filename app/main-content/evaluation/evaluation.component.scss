@@ -12,7 +12,7 @@
 }
 
 .evaluations-carousel {
-    height: 360px;
+    height: 380px;
     transition: transform 0.5s ease;
     position: relative;
     overflow: hidden;
@@ -24,7 +24,7 @@
 
 .review-box {
     flex-shrink: 0;
-    height: 360px;
+    height: 380px;
     width: 600px;
     position: absolute;
     background-color: #26524B;
@@ -80,10 +80,11 @@
     >div {
         @include flexBox(row, center, center, 8px);
     }
-    >img {
-        &:hover {
-            cursor: pointer;
-        }
+}
+
+.hover {
+    &:hover {
+        cursor: pointer;
     }
 }
 
@@ -120,6 +121,10 @@
     .blur-effect {
         width: 100%;
     }
+
+    h3 {
+        font-size: clamp(40px, 5vw, 56px);
+    }
 }
 
 @media(max-width: 900px) {
@@ -141,7 +146,6 @@
 }
 
 @media(max-width: 650px) {
-
     .review-box {
         padding: 1em;
         width: 400px;
@@ -161,6 +165,10 @@
 }
 
 @media(max-width: 450px) {
+    .evaluations {
+        gap: 32px;
+    }
+
     .review-box {
         width: 300px;
     }

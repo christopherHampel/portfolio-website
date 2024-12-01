@@ -4,8 +4,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    bottom: 0;
+    right: 0;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
@@ -43,12 +43,24 @@
 }
 
 .project-description {
+    width: 100%;
     @include flexBox(column, flex-start, flex-start, 32px);
     >h4 {
         @include styleFont('Fira Code', 24px, 700, 28.8px, #3DCFB6);
     }
     >p {
         @include styleFont('Karla', 18px, 400, 21.6px, #FFFF);
+    }
+}
+
+.dialog-skills {
+    flex-wrap: wrap;
+    @include flexBox(row, flex-start, center, 16px);
+    >div {
+        @include flexBox(row, flex-start, center, 4px);
+        >span {
+            @include styleFont('Karla', 16px, 400, 19.2px, #FFFF);
+        }
     }
 }
 
@@ -64,6 +76,14 @@
 .close-button {
     position: relative;
     display: inline-block;
+    width: 48px;
+    height: 48px;
+    background-image: url('./../../../../assets/img/23.\ Close\ Button.png');
+
+    &:hover {
+        cursor: pointer;
+        background-image: url('./../../../../assets/img/close_hover.png');
+    }
 }
 
 .close-button .hover {
@@ -101,12 +121,30 @@
     }
 }
 
+.next-project-responsiv {
+    display: none;
+}
+
 @media(max-width: 1200px) {
     .dialog-content {
+        position: relative;
         flex-direction: column-reverse;
+        justify-content: center;
         overflow-y: auto;
         height: 80%;
-        gap: 0;
+        gap: 24px;
+    }
+
+    .next-project {
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+    }
+
+    .close-button {
+        position: absolute;
+        top: 12px;
+        right: 12px;
     }
 
     .image-and-dialog-steering {
@@ -115,7 +153,7 @@
     }
 
     .project-details {
-        padding: 0;
+        padding: 0 12px;
     }
 
     .dialog-image {
@@ -135,6 +173,52 @@
     }
 
     .project-description {
+        gap: 20px;
+    }
+
+    .more-links {
+        width: 100%;
+        @include flexBox(row, center, center, 32px);
+    }
+
+    .project-details {
+        gap: 24px;
+        overflow: auto;
+        height: 40%;
+    }
+}
+
+@media(max-width: 550px) {
+    .project-details {
+        width: 380px;
+    }
+}
+
+@media(max-width: 420px) {
+    .project-details {
+        width: 290px;
+    }
+
+    .dialog-image {
+        width: 280px;
+        height: 180px;
+    }
+
+    .number-and-name {
         gap: 16px;
+        >h4 {
+            font-size: 64px;
+        }
+        >span {
+            font-size: 44px;
+        }
+    }
+
+    .project-description {
+        gap: 16px;
+        >p {
+            font-size: 16px;
+            line-height: 19.2px;
+        }
     }
 }

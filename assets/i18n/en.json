@@ -66,6 +66,28 @@
     "join": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
     "epl": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
     "dabubble": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization."
+  },
+
+  "technologies": {
+    "h2": "Technologies",
+    "h3": "Skill Set",
+    "introductoryText": "My journey has involved working on diverse projects, employing a range of frontend technologies and concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and stay ahead in the ever-evolving landscape of web development.",
+    "youneed": "You need",
+    "anotherskill": "another skill?",
+    "invitationContact": "Feel free to contact me. I look forward to expanding on my previous knowledge.",
+    "letstalk": "Let's Talk!",
+    "specialinteresting": "I have a special interest in learning"
+  },
+
+  "footer": {
+    "location": "Fulda Germany",
+    "imprint": "Impressum",
+    "privacy": "Privacy Police"
+  },
+
+  "projectDialog": {
+    "h4": "What is this project about?",
+    "nextProject": "Next project"
   }
 }
   

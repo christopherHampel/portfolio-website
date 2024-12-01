@@ -19,6 +19,10 @@
     .portfolio {
         padding-bottom: 72px;
     }
+
+    h3 {
+        font-size: clamp(40px, 5vw, 56px);
+    }
 }
 
 @media(max-width: 1000px) {
@@ -31,6 +35,7 @@
 @media(max-width: 650px) {
     .portfolio-header {
         width: 400px;
+        gap: 24px;
         >span {
             width: 100%;
         }

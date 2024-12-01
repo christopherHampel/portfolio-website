@@ -1,10 +1,11 @@
 import { CommonModule, NgClass, NgIf } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-nav-burger-menu',
   standalone: true,
-  imports: [CommonModule, NgIf, NgClass],
+  imports: [ CommonModule, NgIf, NgClass, TranslateModule ],
   templateUrl: './nav-burger-menu.component.html',
   styleUrl: './nav-burger-menu.component.scss'
 })
@@ -27,7 +28,8 @@ export class NavBurgerMenuComponent {
     this.english = !this.english;
     this.englishChange.emit(this.english);
     this.languageChange.emit();
-
-    // console.log(this.english);
+    setTimeout( () => {
+      this.toggleResponsiveMenu()
+    }, 500)
   }
 }

@@ -18,6 +18,11 @@ nav {
     >.logo-normal {
         position: absolute;
     }
+    >div {
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 .burger-button {
@@ -54,6 +59,7 @@ nav {
 
 .nav-links {
     position: relative;
+    width: 100px;
     >a {
         @include styleFont('Fira Code', 20px, 400, 26.24px, #FFFF);
         text-decoration: none;
@@ -104,7 +110,7 @@ nav {
     }
 }
 
-@media(max-width: 750px) {
+@media(max-width: 850px) {
     nav {
         padding: 0 16px;
         flex-direction: row-reverse;

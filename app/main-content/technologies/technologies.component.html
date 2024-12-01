@@ -1,19 +1,19 @@
 <section id="technologies" class="technologies max-width">
 
     <div class="information-box declarations-skill-set">
-        <h2>Technologies</h2>
+        <h2>{{ 'technologies.h2' | translate }}</h2>
 
         <div>
-            <h3>Skill Set</h3>
+            <h3>{{ 'technologies.h3' | translate }}</h3>
 
             <div class="content-skillset">
-                <p>My journey has involved working on diverse projects, employing a range of frontend technologies and concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and stay ahead in the ever-evolving landscape of web development.</p>
+                <p>{{ 'technologies.introductoryText' | translate }}</p>
 
-                <span>You need <span>another skill?</span></span>
+                <span>{{ 'technologies.youneed' | translate }} <span>{{ 'technologies.anotherskill' | translate }}</span></span>
     
-                <p class="font-karla-16">Feel free to contact me. I look forward to expanding on my previous knowledge.</p>
+                <p class="font-karla-16">{{ 'technologies.invitationContact' | translate }}</p>
             </div>
-            <button class="main-button"><span class="main-button-content">Let's Talk</span></button>
+            <button class="main-button"><span class="main-button-content">{{ 'technologies.letstalk' | translate }}</span></button>
         </div>
     </div>
 
@@ -23,7 +23,7 @@
             <div [ngClass]="$index == technologies.length - 1 ? 'tooltip' : ''" class="single-technology">
                 <span [ngClass]="{'tooltiptext': $index === technologies.length - 1, 'vs-hidden': true}">
                     <div>
-                        <span>I have a special interest in learning</span>
+                        <span>{{ 'technologies.specialinteresting' | translate }}</span>
                         <div class="interested-technologies">
                             <div>
                                 <img src="assets/img/React Js.png" alt="">
@@ -34,8 +34,11 @@
                         </div>
                     </div>
                 </span>
-                <img src='{{ technology.image }}'>
-                <span [ngClass]="{'technology-description': $index === technologies.length - 1}">{{ technology.description }}</span>
+
+                <img [src]="'assets/img/' + technology +'.png'" alt="">
+                <span>{{ technology }}</span>
+                <!-- <img src='{{ technology.image }}'>
+                <span [ngClass]="{'technology-description': $index === technologies.length - 1}">{{ technology.description }}</span> -->
             </div>
         }
     </div>

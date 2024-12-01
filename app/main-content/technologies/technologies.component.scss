@@ -106,6 +106,10 @@
         gap: 72px;
     }
 
+    h3 {
+        font-size: clamp(32px, 5vw, 56px);
+    }
+
     .declarations-skill-set {
         padding-left: 0;
         width: 568px;
@@ -129,11 +133,15 @@
     }
 
     .skill-set-icons {
-        gap: 16px;
+        gap: 24px;
         overflow: hidden;
     }
     
     .single-technology {
+        >img {
+            width: 48px;
+            height: 48px;
+        }
         >span {
             font-size: 16px;
         }

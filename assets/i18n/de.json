@@ -23,8 +23,8 @@
     "headline": "Wer ich bin",
     "subline": "Über mich",
     "greeting": "Hallo, ich bin ein deutschsprachiger Frontend-Entwickler mit Sitz in München. Motiviert durch die grenzenlosen Möglichkeiten innerhalb der IT, freue ich mich darauf, visuell fesselnde und intuitive Websites und Anwendungen zu erstellen.",
-    "infoOne": "Flexible in terms of working environments, I can work effectively both on-site in Munich and remotely.",
-    "infoTwo": "Flexibel in Bezug auf die Arbeitsumgebung kann ich sowohl vor Ort in München als auch remote effektiv arbeiten.",
+    "infoOne": "Flexibel in Bezug auf die Arbeitsumgebung kann ich sowohl vor Ort in München als auch remote effektiv arbeiten.",
+    "infoTwo": "Ich bin aufgeschlossen und immer auf der Suche nach persönlichen Herausforderungen, um mein Wissen und meine Fähigkeiten stetig zu verbessern.",
     "infoThree": "In meinem Beruf geht es beim Programmieren nicht nur darum, Code zu schreiben; Es ist eine kreative Form der Problemlösung. Ich bin stolz auf meine Fähigkeit, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen umzuwandeln. So helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Visionen zum Leben zu erwecken."
   },
 
@@ -66,6 +66,28 @@
     "join": "Vom Kanban-System inspirierter Aufgabenmanager. Erstellen und organisieren Sie Aufgaben mithilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
     "epl": "Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.",
     "dabubble": "Diese App ist eine Slack-Clone-App. Es revolutioniert die Teamkommunikation und Zusammenarbeit mit seiner intuitiven Benutzeroberfläche, Echtzeit-Messaging und einer robusten Kanalorganisation."
+  },
+
+  "technologies": {
+    "h2": "Technologien",
+    "h3": "Fähigkeiten",
+    "introductoryText": "Meine Reise umfasste die Arbeit an verschiedenen Projekten und den Einsatz verschiedener Frontend-Technologien und -Konzepte. Ich bin offen für den Einsatz neuer Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu verbessern und in der sich ständig weiterentwickelnden Landschaft der Webentwicklung an der Spitze zu bleiben.",
+    "youneed": "Du brauchst einen",
+    "anotherskill": "anderen Skill? ",
+    "invitationContact": "Kontaktieren Sie mich gerne. Ich freue mich darauf, mein bisheriges Wissen zu erweitern.",
+    "letstalk": "Lass uns reden!",
+    "specialinteresting": "Ich habe ein besonderes Interesse am Lernen"
+  },
+
+  "footer": {
+    "location": "Fulda Deutschland",
+    "imprint": "Impressum",
+    "privacy": "Datenschutzerklärung"
+  },
+
+  "projectDialog": {
+    "h4": "Worum geht es in diesem Projekt?",
+    "nextProject": "Nächstes Projekt"
   }
 }
   

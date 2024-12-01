@@ -13,32 +13,34 @@ imports: [ NgClass, NavBurgerMenuComponent, TranslateModule ],
 })
 export class NavBarComponent {
 
+  currentLanguage:string = 'en';
+  private translateService = inject(TranslateService);
+
   constructor() {
     const language = localStorage.getItem('english?');
+    const currentLanguage = localStorage.getItem('english?');
     this.english = language ? JSON.parse(language) : true;
-    console.log(this.english);
+    this.currentLanguage = currentLanguage ? JSON.parse(currentLanguage) : true;
   }
 
   english:boolean = true;
   isMenuOpen: boolean = false;
 
-  currentLanguage:string = 'en';
-  private translateService = inject(TranslateService);
-
   changeLanguage() {
     this.toggleLanguage();
-    this.currentLanguage = this.currentLanguage === 'en' ? 'de' : 'en';
     this.translateService.use(this.currentLanguage);
-    localStorage.setItem('language', this.currentLanguage);
   }
 
   toggleLanguage() {
     if(this.english) {
       this.english = false;
+      this.currentLanguage = 'de';
     } else {
       this.english = true;
+      this.currentLanguage = 'en';
     }
     localStorage.setItem('english?', JSON.stringify(this.english));
+    localStorage.setItem('language', this.currentLanguage);
   }
 
   toggleResponsiveMenu() {

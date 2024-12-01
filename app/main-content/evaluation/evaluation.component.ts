@@ -12,8 +12,6 @@ import { Subscription } from 'rxjs';
 })
 export class EvaluationComponent{
 
-  carouselStarted:boolean = true;
-
   evaluations: {name:string; review:string; reviewKey:string}[] = [
     {
       name: 'Kaloyan Ivanov',
@@ -39,26 +37,38 @@ export class EvaluationComponent{
     this.initializeTranslations();
   }
 
+  positionEllipse = ['normal-ellipse','highlight-ellipse', 'normal-ellipse'];
+  positionsBoxes = ['left-box', 'middle-box', 'right-box'];
+
+  nextEvaluation() {
+    this.positionsBoxes.unshift(this.positionsBoxes.pop()!);
+    this.positionEllipse.unshift(this.positionEllipse.pop()!);
+  }
+
+  getEllipse(index: number) {
+    return this.positionEllipse[index];
+  }
+
+  previousEvaluation() {
+    this.positionsBoxes.push(this.positionsBoxes.shift()!);
+    this.positionEllipse.push(this.positionEllipse.shift()!);
+  }
+
+  getPosition(index:number) {
+    return this.positionsBoxes[index];
+  }
+
   initializeTranslations() {
-    // Erstellen eines Streams für Sprachänderungen
     const translationSubscription = this.translateService.onLangChange.subscribe(() => {
       this.updateTranslations();
     });
-
-    // Direkt initiale Übersetzungen laden
     this.updateTranslations();
-
-    // Subscription speichern, um sie bei Bedarf zu löschen
     this.subscription.add(translationSubscription);
   }
 
-  /**
-   * Aktualisiert die Übersetzungen basierend auf den aktuellen Sprachwerten
-   */
   updateTranslations() {
     this.evaluations.forEach(evaluation => {
       if (evaluation.reviewKey) {
-        // Dynamisch die Übersetzung für den Key setzen
         this.translateService
           .get(evaluation.reviewKey)
           .subscribe(translation => {
@@ -70,43 +80,5 @@ export class EvaluationComponent{
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
-  }
-
-  positionEllipse = ['normal-ellipse','highlight-ellipse', 'normal-ellipse'];
-  positionsBoxes = ['left-box', 'middle-box', 'right-box'];
-
-  nextEvaluation() {
-    this.carouselStarted = true;
-    this.positionsBoxes.unshift(this.positionsBoxes.pop()!);
-  }
-
-  getEllipse(index: number) {
-    return this.positionEllipse[index];
-  }
-
-  previousEvaluation() {
-    this.carouselStarted = true;
-    this.evaluations.push(this.evaluations.shift()!);
-    
-    this.positionEllipse.push(this.positionEllipse.shift()!);
-
-    // console.log(this.evaluations);
-  }
-
-  getPosition(index:number) {
-    return this.positionsBoxes[index];
-
-
-  //   if(index == 0) {
-  //     return 'left-box';
-  //     // return {'transform': 'translateX(calc(100% + 80px))'};
-  //   } else if(index == 1) {
-  //     // return {'transform': 'translateX(calc(100% + 80px))'};
-  //     return 'middle-box';
-  //   } else {
-  //     // return {'transform': 'translateX(calc(-200% - 160px))'};
-  //     return 'right-box';
-  //   }
-  // }
   }
 }

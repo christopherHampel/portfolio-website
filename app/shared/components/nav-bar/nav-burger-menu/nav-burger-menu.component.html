@@ -2,16 +2,16 @@
     <div (click)="$event.stopPropagation()" *ngIf="isMenuOpen" class="responsive-menu">
         
         <div class="nav-links">
-            <a href="#">About me</a>
+            <a (click)="toggleResponsiveMenu()" href="#about-me">{{ 'nav.aboutme' | translate }}</a>
         </div>
         <div class="nav-links">
-            <a href="#">Skills</a>
+            <a (click)="toggleResponsiveMenu()" href="#technologies">{{ 'nav.skills' | translate }}</a>
         </div>
         <div class="nav-links">
-            <a href="#">Projects</a>
+            <a (click)="toggleResponsiveMenu()" href="#portfolio">{{ 'nav.projects' | translate }}</a>
         </div>
         <div class="nav-links">
-            <a href="#contact-me">Contact me</a>
+            <a (click)="toggleResponsiveMenu()" href="#contact-me">{{ 'nav.contact' | translate }}</a>
         </div>
 
         <div (click)="changeLanguageBurgermenu()" [ngClass]="english ? 'english' : 'german'" class="toggle-language"></div>

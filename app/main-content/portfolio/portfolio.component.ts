@@ -18,30 +18,35 @@ export class PortfolioComponent {
   currentProjects = [
     {
       projectName: 'JOIN',
-      projectSkills: 'ANGULAR | TYPESCRIPT | HTML | CSS | FIREBASE',
+      projectSkills: ['JAVASCRIPT', 'HTML', 'CSS', 'FIREBASE'],
       projectImage: 'assets/img/join_image.png',
       projectDescription: '',
+      projectLink: "",
+      githubLink: "",
       key: 'portfolio.join',
     },
     {
       projectName: 'EL POLLO LOCO',
-      projectSkills: 'HTML | CSS | JAVASCRIPT',
+      projectSkills: ['HTML', 'CSS', 'JAVASCRIPT'],
       projectImage: 'assets/img/elpolloloco_image.png',
       projectDescription: '',
+      projectLink: "",
+      githubLink: "https://github.com/christopherHampel/el-pollo-loco",
       key: 'portfolio.epl',
     },
     {
       projectName: 'DA BUBBLE',
-      projectSkills: 'Angular | TypeScript | FIREBASE',
+      projectSkills: ['ANGULAR', 'TYPESCRIPT', 'FIREBASE'],
       projectImage: 'assets/img/dabubble_image.png',
       projectDescription: '',
+      projectLink: "#",
+      githubLink: "#",
       key: 'portfolio.dabubble',
     },
   ];
 
   constructor() {
     this.initializeTranslations();
-    console.log(this.currentProjects);
   }
 
   initializeTranslations() {

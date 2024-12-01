@@ -5,7 +5,7 @@
 
     <div class="evaluations-carousel max-width">
         @for (review of evaluations; track $index) {
-            <div class="review-box" [ngClass]="carouselStarted ? getPosition($index) : ''">
+            <div class="review-box" [ngClass]="getPosition($index)">
                 <div class="content">
                     <span>{{ review.review }}</span>
                     <div class="review-name">
@@ -21,14 +21,14 @@
 
     <div class="arrows-carousel">
         <div>
-            <img (click)="previousEvaluation()" src="assets/img/arrow_back.png" alt="">
+            <img class="hover" (click)="previousEvaluation()" src="assets/img/arrow_back.png" alt="">
         </div>
         <div class="ellipse-container">
             @for (review of evaluations; track $index) {
                 <div [ngClass]="getEllipse($index)"></div>
             }
         </div>
-        <img (click)="nextEvaluation()" src="assets/img/arrow_forward.png" alt="">
+        <img class="hover" (click)="nextEvaluation()" src="assets/img/arrow_forward.png" alt="">
     </div>
 </div>
 

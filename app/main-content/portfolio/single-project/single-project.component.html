@@ -5,7 +5,12 @@
             <div class="hover-link-icon"><img src="assets/img/link_icon.png" alt=""></div>
         </div>
         <div class="required-skills">
-            <span>{{ projectSkills }}</span>
+            @for (skill of projectSkills; track $index) {
+                <div class="skill">
+                    <span>{{ skill }}</span>
+                    <span class="seperator-skills" *ngIf="$index < projectSkills.length - 1"></span>
+                </div>
+            }
         </div>
     </div>
 

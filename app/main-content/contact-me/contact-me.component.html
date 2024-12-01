@@ -16,28 +16,27 @@
 
     <div class="rightside-formular">
 
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
-            <!-- Name Field -->
+        <form [formGroup]="contactData" (ngSubmit)="onSubmit()" novalidate>
             <div class="form-group">
               <label for="name">{{ "contact.rightside.name" | translate }}</label>
               <input
                 id="name"
                 type="text"
                 formControlName="name"
-                placeholder=""
+                [placeholder]="'contact.rightside.namePlaceholder' | translate"
               />
               <div *ngIf="name.touched && name.invalid" class="error">
                 {{ "contact.rightside.nameError" | translate }}
               </div>
             </div>
           
-            <!-- Email Field -->
             <div class="form-group">
               <label for="email">{{ "contact.rightside.email" | translate }}</label>
               <input
                 id="email"
                 type="email"
                 formControlName="email"
+                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                 placeholder="youremail@email.com"
               />
               <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
@@ -45,21 +44,19 @@
               </div>
             </div>
           
-            <!-- Message Field -->
             <div class="form-group">
               <label for="message">{{ "contact.rightside.message" | translate }}</label>
               <textarea rows="1"
                 (keyup)="autoGrowTextZone($event)"
                 id="message"
                 formControlName="message"
-                placeholder=""
-              ></textarea>
+                [placeholder]="'contact.rightside.messagePlaceholder' | translate">
+              </textarea>
               <div *ngIf="message.invalid && (message.dirty || message.touched)" class="error">
                 {{ "contact.rightside.messageError" | translate }}
               </div>
             </div>
           
-            <!-- Privacy Policy Checkbox -->
             <div class="form-group responsive-checkbox">
                 <label class="checkbox-label">
                 <input
@@ -78,10 +75,11 @@
                     <div *ngIf="privacyPolicy.invalid && (privacyPolicy.dirty || privacyPolicy.touched)" class="error">
                       {{ "contact.rightside.checkPrivacyError" | translate }}
                     </div>
-                    <div>
-                      <button type="submit" [disabled]="contactForm.invalid"><span>{{ "contact.rightside.submit" | translate }}</span></button>
-                    </div>
                 </div>
+            </div>
+
+            <div>
+              <button type="submit" [disabled]="contactData.invalid"><span>{{ "contact.rightside.submit" | translate }}</span></button>
             </div>
           </form>
     </div>
