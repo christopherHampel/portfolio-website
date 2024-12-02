@@ -49,6 +49,9 @@
     width: 295px;
     height: 192px;
     opacity: 0;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .project:hover .hover-image {
@@ -97,6 +100,10 @@
     }
 
     .project-image {
+        transform: translateX(50%)
+    }
+
+   .project-image-bg {
         transform: translateX(50%)
     }
     
