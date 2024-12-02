@@ -3,22 +3,26 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, Validators, FormBuilder, FormGroup, ReactiveFormsModule, NgForm } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { MessageFeedbackComponent } from './message-feedback/message-feedback.component';
+
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [ FormsModule, CommonModule, ReactiveFormsModule, TranslateModule ], 
+  imports: [ FormsModule, CommonModule, ReactiveFormsModule, TranslateModule, MessageFeedbackComponent ], 
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss'
 })
 export class ContactMeComponent {
 
-  mailTest = false;
+  mailtest = true;
+  formSubmitted = false;
 
   private translateService = inject(TranslateService);
 
   http = inject(HttpClient);
   privacyPolice = false;
+  showFeedback = false;
 
   contactData: FormGroup;
 
@@ -46,7 +50,6 @@ export class ContactMeComponent {
   get privacyPolicy() {
     return this.contactData.get('privacyPolicy')!;
   }
-  // http://christopher-hampel.de/sendMail.php
 
   post = {
     endPoint: 'http://christopher-hampel.de/sendMail.php',
@@ -61,21 +64,36 @@ export class ContactMeComponent {
   };
 
   onSubmit() {
-    if (!this.mailTest) {
+    this.checkFormValid();
+    if (this.contactData.valid) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData.value))
         .subscribe({
           next: (response) => {
-            //Feedback hinzufügen --> email versendet, wir melden uns ...
-            this.contactData.value.reset();
+            this.feedbackMessageSend()
           },
           error: (error) => {
             console.error(error);
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (this.mailTest) {
-      console.log(this.contactData.value);
+    }
+  }
+
+  feedbackMessageSend() {
+    this.showFeedback = true;
+    setTimeout(() => {
+      this.showFeedback = false;
+      this.formSubmitted = false;
       this.contactData.reset();
+    }, 3000);
+  }
+
+  checkFormValid() {
+    this.formSubmitted = true;
+
+    if (this.contactData.invalid) {
+      this.contactData.markAllAsTouched();
+      return;
     }
   }
 

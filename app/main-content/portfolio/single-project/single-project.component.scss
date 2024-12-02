@@ -95,6 +95,16 @@
             transform: translateX(50%);
         }
     }
+
+    .project-image {
+        transform: translateX(50%)
+    }
+    
+    .project {
+        >div {
+            width: 568px;
+        }
+    }
 }
 
 @media(max-width: 1000px) {
@@ -117,7 +127,7 @@
     }
 
     .hover-image {
-        position: absolute;
+        position: absolute !important;
         opacity: 0;
         height: 0;
         width: 0;
@@ -127,6 +137,12 @@
     
     .project-description {
         width: 400px;
+    }
+
+    .project {
+        >div {
+            width: 290px;
+        }
     }
 }
 

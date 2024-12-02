@@ -2,12 +2,13 @@ import { NgClass, NgIf } from '@angular/common';
 import { Component, inject, ViewChild } from '@angular/core';
 import { NavBurgerMenuComponent } from './nav-burger-menu/nav-burger-menu.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LogoComponent } from '../../logo/logo.component';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
 
-imports: [ NgClass, NavBurgerMenuComponent, TranslateModule ],
+imports: [ NgClass, NavBurgerMenuComponent, TranslateModule, LogoComponent ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss'
 })

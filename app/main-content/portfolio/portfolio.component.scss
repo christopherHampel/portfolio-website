@@ -15,6 +15,10 @@
     }
 }
 
+.portfolio-menu {
+    margin-left: -40px;
+}
+
 @media(max-width: 1440px) {
     .portfolio {
         padding-bottom: 72px;
@@ -23,12 +27,24 @@
     h3 {
         font-size: clamp(40px, 5vw, 56px);
     }
+
+    .portfolio-header {
+        width: auto;
+    }
+
+    .portfolio-menu {
+        width: 568px;
+    }
 }
 
 @media(max-width: 1000px) {
     .portfolio-header {
         width: 568px;
         padding: 0;
+    }
+
+    .portfolio-menu {
+        margin-left: 0;
     }
 }
 
@@ -39,6 +55,12 @@
         >span {
             width: 100%;
         }
+    }
+    
+    .portfolio-menu {
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 }
 

@@ -1,0 +1,32 @@
+@import './../../../../styles.scss';
+
+section {
+    @include flexBox(row, center, center, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.3);
+    >div {
+        padding: 40px;
+        border: 1px solid #3DCFB6;
+        border-radius: 30px;
+        background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+        @include flexBox(column, flex-start, center, 8px);
+        transform: translateX(200%);
+        transition: transform .5s ease-in-out;
+    }
+}
+
+span {
+    color: #FFFF;
+}
+
+.visible {
+    visibility: visible;
+    >div {
+        transform: translateX(0);
+    }
+}

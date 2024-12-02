@@ -1,8 +1,16 @@
 @import './../../styles.scss';
 
+section {
+    padding: 24px;
+}
+
 h2 {
     text-align: center;
     padding-bottom: 24px;
+}
+
+h4 {
+    @include styleFont('Karla', 14px, 400, 21.6px, #3DCFB6);
 }
 
 p {

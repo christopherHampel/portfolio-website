@@ -51,6 +51,12 @@
     width: 100%;
 }
 
+.submitButton {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 button {
     background: none;
     height: 48px;

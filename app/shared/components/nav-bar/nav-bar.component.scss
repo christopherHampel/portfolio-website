@@ -59,7 +59,6 @@ nav {
 
 .nav-links {
     position: relative;
-    width: 100px;
     >a {
         @include styleFont('Fira Code', 20px, 400, 26.24px, #FFFF);
         text-decoration: none;

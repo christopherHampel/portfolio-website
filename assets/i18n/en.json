@@ -50,7 +50,8 @@
       "checkPrivacySecond": "privacy policy",
       "checkPrivacyThird": "and agree to the processing of my data as outlined.",
       "checkPrivacyError": "Please accept the privacy policy.",
-      "submit": "Contact me :)"
+      "submit": "Contact me :)",
+      "submitError": "Please fill out all fields!"
     }
   },
 

@@ -188,6 +188,36 @@
     }
 }
 
+@media(max-height: 750px) {
+    .image-and-dialog-steering {
+        gap: 24px;
+    }
+
+    .dialog-content {
+        height: 80%;
+    }
+
+    .number-and-name {
+        flex-direction: row;
+        align-items: center;
+        >h4 {
+            font-size: 80px;
+        }
+        >span {
+            font-size: 40px;
+        }
+    }
+
+    .project-details {
+        gap: 24px;
+    }
+
+    .dialog-image {
+        height: 250px;
+        width: fit-content;
+    }
+}
+
 @media(max-width: 550px) {
     .project-details {
         width: 380px;

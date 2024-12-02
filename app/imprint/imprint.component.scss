@@ -1,5 +1,36 @@
+@import './../../styles.scss';
 
+app-footer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
 
-h3 {
-    text-align: center;
+section {
+    padding: 0 144px;
+    @include flexBox(column, flex-start, flex-start, 40px);
+    >div {
+        @include flexBox(column, flex-start, flex-start, 8px);
+        >p {
+            @include styleFont('Karla', 16px, 400, 19.2px, #FFFF);
+        }
+    }
+}
+
+@media(max-width: 1440px) {
+    section {
+        padding: 0 24px;
+        padding-bottom: 40px;
+    }
+}
+
+@media(max-width: 600px) {
+    app-footer {
+        position: unset;
+    }
+
+    h3 {
+        font-size: 48px;
+    }
 }

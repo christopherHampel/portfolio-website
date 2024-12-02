@@ -78,10 +78,15 @@
                 </div>
             </div>
 
-            <div>
-              <button type="submit" [disabled]="contactData.invalid"><span>{{ "contact.rightside.submit" | translate }}</span></button>
+            <div class="submitButton">
+              <button type="submit"><span>{{ "contact.rightside.submit" | translate }}</span></button>
+              <div *ngIf="formSubmitted && contactData.invalid" class="error">
+                {{ "contact.rightside.submitError" | translate }}
+              </div>
             </div>
+            <app-message-feedback [showFeedback]="showFeedback"></app-message-feedback>
           </form>
     </div>
+
 
 </section>

@@ -1,10 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LogoComponent } from '../logo/logo.component';
+
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [ TranslateModule ],
+  imports: [ TranslateModule, LogoComponent ],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
