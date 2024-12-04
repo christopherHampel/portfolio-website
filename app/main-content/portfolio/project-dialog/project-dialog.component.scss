@@ -42,6 +42,10 @@
     @include flexBox(row, flex-start, center, 4px);
 }
 
+a {
+    text-decoration: none;
+}
+
 .project-description {
     width: 100%;
     @include flexBox(column, flex-start, flex-start, 32px);
@@ -133,6 +137,7 @@
         overflow-y: auto;
         height: 80%;
         gap: 24px;
+        padding: 12px;
     }
 
     .next-project {

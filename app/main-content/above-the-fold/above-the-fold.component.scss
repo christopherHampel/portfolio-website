@@ -66,6 +66,7 @@ app-keywords-marquee {
 }
 
 .email-contact {
+    @include flexBox(column, flex-start, center, 0);
     >.contact-email {
         text-decoration: none;
         writing-mode:vertical-rl;
@@ -114,6 +115,11 @@ app-keywords-marquee {
     height: 32px;
 }
 
+.mail {
+    position: absolute;
+    opacity: 0;
+}
+
 .social-icon img {
     position: absolute;
     top: 0;
@@ -154,6 +160,11 @@ app-keywords-marquee {
 
     .leterals {
         padding-left: 12px;
+    }
+
+    .mail {
+        position: relative;
+        opacity: 1;
     }
 }
 

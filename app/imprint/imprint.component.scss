@@ -7,30 +7,47 @@ app-footer {
     bottom: 0;
 }
 
-section {
-    padding: 0 144px;
-    @include flexBox(column, flex-start, flex-start, 40px);
-    >div {
-        @include flexBox(column, flex-start, flex-start, 8px);
-        >p {
-            @include styleFont('Karla', 16px, 400, 19.2px, #FFFF);
-        }
-    }
+div {
+    padding: 0 96px;
 }
 
-@media(max-width: 1440px) {
-    section {
+h3, h2 {
+    padding: 40px 96px;
+}
+
+p {
+    @include styleFont('Karla', 16px, 400, 19.2px, #FFFF);
+}
+
+a {
+    text-decoration: none;
+    color: #FFFF;
+}
+
+@media(max-width: 500px) {
+    div {
         padding: 0 24px;
-        padding-bottom: 40px;
+    }
+
+    h3, h2 {
+        padding: 40px 24px;
+    }
+
+    h3 {
+        font-size: 50px;
     }
 }
 
-@media(max-width: 600px) {
+@media(max-height: 775px) {
     app-footer {
         position: unset;
     }
 
-    h3 {
-        font-size: 48px;
+    article {
+        padding-bottom: 40px;
+    }
+
+    .max-width {
+        padding: 0;
     }
 }

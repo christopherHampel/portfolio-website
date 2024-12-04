@@ -1,14 +1,15 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, inject, ViewChild } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NavBurgerMenuComponent } from './nav-burger-menu/nav-burger-menu.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LogoComponent } from '../../logo/logo.component';
+import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-
-imports: [ NgClass, NavBurgerMenuComponent, TranslateModule, LogoComponent ],
+  imports: [ NgClass, NavBurgerMenuComponent, TranslateModule, LogoComponent, RouterLink ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss'
 })
@@ -17,7 +18,7 @@ export class NavBarComponent {
   currentLanguage:string = 'en';
   private translateService = inject(TranslateService);
 
-  constructor() {
+  constructor(private router: Router) {
     const language = localStorage.getItem('english?');
     const currentLanguage = localStorage.getItem('english?');
     this.english = language ? JSON.parse(language) : true;
@@ -50,5 +51,14 @@ export class NavBarComponent {
 
   onMenuToggle(isOpen: boolean) {
     this.isMenuOpen = isOpen;
+  }
+
+  navigateToSection(fragment: string): void {
+    this.router.navigate(['/'], { fragment }).then(() => {
+      const element = document.getElementById(fragment);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   }
 }

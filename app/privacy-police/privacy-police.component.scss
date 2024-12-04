@@ -4,16 +4,45 @@ section {
     padding: 24px;
 }
 
-h2 {
+h1 {
+    @include styleFont('Fira Code', 18px, 400, 21.6px, #3dcfb6);
     text-align: center;
-    padding-bottom: 24px;
+}
+
+h2 {
+    padding: 24px;
+    text-align: center;
+}
+
+h3 {
+    padding: 32px 0;
+    font-size: 24px;
+    line-height: unset;
+    color: #FFFF;
 }
 
 h4 {
-    @include styleFont('Karla', 14px, 400, 21.6px, #3DCFB6);
+    @include styleFont('Karla', 18px, 400, 19.2px, #3DCFB6);
+    padding: 24px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #3DCFB6;
+    padding: 12px 0;
 }
 
 p {
     @include styleFont('Karla', 16px, 400, 21.6px, #FFFF);
-    padding-bottom: 24px;
+}
+
+li {
+    @include styleFont('Karla', 16px, 400, 19.6p, #FFFF);
+}
+
+@media(max-width: 400px) {
+    h3 {
+        line-height: unset;
+        font-size: 28px;
+    }
 }

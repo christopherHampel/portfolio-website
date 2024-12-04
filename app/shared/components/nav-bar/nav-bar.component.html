@@ -5,22 +5,22 @@
             <div (click)="changeLanguage()" [ngClass]="english ? 'english' : 'german'" class="toggle-language"></div>
     
             <div class="nav-links">
-                <a href="#about-me">{{ 'nav.aboutme' | translate }}</a>
+                <a (click)="navigateToSection('about-me')">{{ 'nav.aboutme' | translate }}</a>
                 <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
             </div>
     
             <div class="nav-links">
-                <a href="#technologies">{{ 'nav.skills' | translate }}</a>
+                <a (click)="navigateToSection('technologies')">{{ 'nav.skills' | translate }}</a>
                 <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
             </div>        
             
             <div class="nav-links">
-                <a href="#portfolio">{{ 'nav.projects' | translate }}</a>
+                <a (click)="navigateToSection('portfolio')">{{ 'nav.projects' | translate }}</a>
                 <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
             </div>        
             
             <div class="nav-links">
-                <a href="#contact-me">{{ 'nav.contact' | translate }}</a>
+                <a (click)="navigateToSection('contact-me')">{{ 'nav.contact' | translate }}</a>
                 <img src="./../../../../assets/img/radio_button_unchecked.png" alt="">
             </div>
             
@@ -30,7 +30,6 @@
 
     <div class="rightside-nav">
         <app-logo></app-logo>
-        <!-- <img class="logo-normal" src="assets/img/ANGULAR.png" alt="Logo"> -->
         <div>
             <img (click)="toggleResponsiveMenu()" class="burger-button" src="assets/img/burgermenu_button.png" alt="">
             <app-nav-burger-menu 

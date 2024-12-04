@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavBarComponent } from '../shared/components/nav-bar/nav-bar.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 
-
 @Component({
   selector: 'app-privacy-police',
   standalone: true,
@@ -11,5 +10,5 @@ import { FooterComponent } from '../shared/footer/footer.component';
   styleUrl: './privacy-police.component.scss'
 })
 export class PrivacyPoliceComponent {
-
+  
 }

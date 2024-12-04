@@ -13,7 +13,7 @@
     
                 <p class="font-karla-16">{{ 'technologies.invitationContact' | translate }}</p>
             </div>
-            <button class="main-button"><span class="main-button-content">{{ 'technologies.letstalk' | translate }}</span></button>
+            <a href="#contact-me" class="main-button"><span class="main-button-content">{{ 'technologies.letstalk' | translate }}</span></a>
         </div>
     </div>
 
@@ -37,8 +37,6 @@
 
                 <img [src]="'assets/img/' + technology +'.png'" alt="">
                 <span>{{ technology }}</span>
-                <!-- <img src='{{ technology.image }}'>
-                <span [ngClass]="{'technology-description': $index === technologies.length - 1}">{{ technology.description }}</span> -->
             </div>
         }
     </div>

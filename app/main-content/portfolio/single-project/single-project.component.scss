@@ -112,6 +112,10 @@
             width: 568px;
         }
     }
+
+    .project:hover .hover-image {
+        opacity: 0;
+    }
 }
 
 @media(max-width: 1000px) {
@@ -148,7 +152,7 @@
 
     .project {
         >div {
-            width: 290px;
+            width: 400px;
         }
     }
 }
@@ -160,6 +164,7 @@
 
     .project {
         >div {
+            width: 290px;
             padding: 24px 0;
             position: relative;
             right: 0;
