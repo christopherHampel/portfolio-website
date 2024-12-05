@@ -79,7 +79,10 @@
             </div>
 
             <div class="submitButton">
-              <button type="submit"><span>{{ "contact.rightside.submit" | translate }}</span></button>
+              <button [ngClass]="{'main-button': contactData.valid}" type="submit">
+                <span      
+                  [ngClass]="{'main-button-content': contactData.valid}">{{ "contact.rightside.submit" | translate }}</span>
+              </button>
               <div *ngIf="formSubmitted && contactData.invalid" class="error">
                 {{ "contact.rightside.submitError" | translate }}
               </div>

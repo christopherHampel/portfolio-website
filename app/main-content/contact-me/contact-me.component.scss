@@ -52,9 +52,8 @@
 }
 
 .submitButton {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    @include flexBox(column, flex-start, center, 16px);
+    width: 100%;
 }
 
 button {

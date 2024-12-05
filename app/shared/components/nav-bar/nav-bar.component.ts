@@ -3,13 +3,12 @@ import { Component, inject } from '@angular/core';
 import { NavBurgerMenuComponent } from './nav-burger-menu/nav-burger-menu.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LogoComponent } from '../../logo/logo.component';
-import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [ NgClass, NavBurgerMenuComponent, TranslateModule, LogoComponent, RouterLink ],
+  imports: [ NgClass, NavBurgerMenuComponent, TranslateModule, LogoComponent ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss'
 })

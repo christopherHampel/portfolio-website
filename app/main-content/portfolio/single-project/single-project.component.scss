@@ -49,6 +49,11 @@
     width: 295px;
     height: 192px;
     opacity: 0;
+    >img {
+        width: 294px;
+        height: fit-content;
+        border-radius: 16px;
+    }
     &:hover {
         cursor: pointer;
     }

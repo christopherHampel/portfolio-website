@@ -19,7 +19,7 @@ export class PortfolioComponent {
     {
       projectName: 'JOIN',
       projectSkills: ['JAVASCRIPT', 'HTML', 'CSS', 'FIREBASE'],
-      projectImage: 'assets/img/join_image.png',
+      projectImage: 'assets/img/join_christopher_hampel.png',
       projectDescription: '',
       projectLink: "http://join.christopher-hampel.de/",
       githubLink: "https://github.com/christopherHampel/join",
@@ -28,7 +28,7 @@ export class PortfolioComponent {
     {
       projectName: 'EL POLLO LOCO',
       projectSkills: ['HTML', 'CSS', 'JAVASCRIPT'],
-      projectImage: 'assets/img/elpolloloco_image.png',
+      projectImage: 'assets/img/epl_image.png',
       projectDescription: '',
       projectLink: "http://polloloco.christopher-hampel.de/",
       githubLink: "https://github.com/christopherHampel/el-pollo-loco",

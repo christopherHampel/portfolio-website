@@ -2,13 +2,17 @@
 
 div {
     padding: 16px;
-    border: 2px solid rgb(169,141,87);
     border-radius: 50%;
     @include flexBox(column, center, center, 0);
     >span {
-        @include styleFont('Arapey', 18px, 700, 21.6px, rgb(169,141,87));
+        @include styleFont('Fira Code', 18px, 700, 21.6px, #FFFF);
     }
-    >.lastname {
-        margin-top: -8px;
+    &:hover {
+        cursor: pointer;
     }
+}
+
+span::first-letter {
+    font-size: 24px;
+    color: #3DCFB6;
 }
