@@ -2,6 +2,8 @@ import { Component, inject } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
+import { InitTranslationServiceService } from '../services/init-translation-service.service';
+import { EvaluationInterface } from '../interfaces/evaluation-interface';
 
 @Component({
   selector: 'app-evaluation',
@@ -12,29 +14,29 @@ import { Subscription } from 'rxjs';
 })
 export class EvaluationComponent{
 
-  evaluations: {name:string; review:string; reviewKey:string}[] = [
+  private translationService = inject(InitTranslationServiceService);
+
+  // evaluations: {name:string; review:string; reviewKey:string}[] = [
+  evaluations: EvaluationInterface[] = [
     {
       name: 'Kaloyan Ivanov',
       review: '',
-      reviewKey: 'evaluations.reviewKaloyanIvanov',
+      key: 'evaluations.reviewKaloyanIvanov',
     },
     {
       name: 'Manuel Mannhold',
       review: '',
-      reviewKey: 'evaluations.reviewManuelMannhold',
+      key: 'evaluations.reviewManuelMannhold',
     },
     {
       name: 'No Colleague',
       review: '',
-      reviewKey: 'evaluations.reviewColleague',
+      key: 'evaluations.reviewColleague',
     },
   ];
 
-  private translateService = inject(TranslateService);
-  private subscription = new Subscription();
-
   constructor() {
-    this.initializeTranslations();
+    this.translationService.initializeTranslations([this.evaluations]);
   }
 
   positionEllipse = ['normal-ellipse','highlight-ellipse', 'normal-ellipse'];
@@ -58,27 +60,27 @@ export class EvaluationComponent{
     return this.positionsBoxes[index];
   }
 
-  initializeTranslations() {
-    const translationSubscription = this.translateService.onLangChange.subscribe(() => {
-      this.updateTranslations();
-    });
-    this.updateTranslations();
-    this.subscription.add(translationSubscription);
-  }
+  // initializeTranslations() {
+  //   const translationSubscription = this.translateService.onLangChange.subscribe(() => {
+  //     this.updateTranslations();
+  //   });
+  //   this.updateTranslations();
+  //   this.subscription.add(translationSubscription);
+  // }
 
-  updateTranslations() {
-    this.evaluations.forEach(evaluation => {
-      if (evaluation.reviewKey) {
-        this.translateService
-          .get(evaluation.reviewKey)
-          .subscribe(translation => {
-            evaluation.review = translation;
-          });
-      }
-    });
-  }
+  // updateTranslations() {
+  //   this.evaluations.forEach(evaluation => {
+  //     if (evaluation.reviewKey) {
+  //       this.translateService
+  //         .get(evaluation.reviewKey)
+  //         .subscribe(translation => {
+  //           evaluation.review = translation;
+  //         });
+  //     }
+  //   });
+  // }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
+  // ngOnDestroy() {
+  //   this.subscription.unsubscribe();
+  // }
 }

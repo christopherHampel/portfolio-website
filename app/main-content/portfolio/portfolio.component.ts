@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { SingleProjectComponent } from './single-project/single-project.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { InitTranslationServiceService } from '../services/init-translation-service.service';
+import { ProjectInterface } from '../interfaces/project-interface';
 
 @Component({
   selector: 'app-portfolio',
@@ -11,9 +13,9 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class PortfolioComponent {
 
-  private translateService = inject(TranslateService);
+  private translationService = inject(InitTranslationServiceService);
 
-  currentProjects = [
+  currentProjects: ProjectInterface[] = [
     {
       projectName: 'JOIN',
       projectSkills: ['JAVASCRIPT', 'HTML', 'CSS', 'FIREBASE'],
@@ -33,4 +35,8 @@ export class PortfolioComponent {
       key: 'portfolio.epl',
     }
   ];
+
+  constructor() {
+    this.translationService.initializeTranslations([this.currentProjects]);
+  }
 }
