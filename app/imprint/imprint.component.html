@@ -1,17 +1,58 @@
-<section class="max-width">
+<section id="imprint" class="max-width">
     <app-nav-bar></app-nav-bar>
 
-    <article>
-        <h3>Impressum</h3>
+    <!-- <article>
+        <h3>{{ 'imprint.imprint' | translate }}</h3>
         <div>
             <p>Christopher Hampel<br />
                 An der Waldesruh 14a<br />
                 36039 Fulda</p>
-                <h2>Kontakt</h2>
-                <p>Telefon: 0160/1819092<br />
+                <h2>{{ 'imprint.contact' | translate }}</h2>
+                <p>{{ 'imprint.phone' | translate }}: 0160/1819092<br />
                 E-Mail: christopher.hampel&#64;yahoo.de</p>
-                <p>Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
+                <p>{{ 'imprint.source' | translate }}: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
         </div>
+    </article> -->
+
+    <article>
+        <h3>{{ 'imprint.imprint' | translate }}</h3>
+        <h2>{{ 'imprint.ServiceProvider' | translate }}</h2>
+        <div>
+            <p>Christopher Hampel</p>
+            <p>An der Waldesruh 14a</p>
+            <p>36039 Fulda</p>
+        </div>
+
+        <h2>{{ 'imprint.contact' | translate }}</h2>
+        <div>
+            <p>E-Mail-Adresse: kontakt&#64;christopher-hampel.de</p>
+            <p>{{ 'imprint.contactForm' | translate }}: <a href="https://www.christopher-hampel.de" target="_blank">https://www.christopher-hampel.de</a></p>
+        </div>
+        
+        <h2>{{ 'imprint.socialMedia' | translate }}</h2>
+        <div>
+            <p>{{ 'imprint.socialMediaParagraph' | translate }} </p>
+            <p><a href="https://github.com/christopherHampel" target="_blank">https://github.com/​<wbr>christopherHampel</a></p>
+            <p><a href="https://www.linkedin.com/?trk=guest_homepage-basic_nav-header-logo" target="_blank">https://www.linkedin.com/?trk=guest_homepage-basic_nav-header-logo</a></p>
+        </div>
+
+        <h2>{{ 'imprint.useText' | translate }}</h2>
+        <h2>{{ 'imprint.socialMedia' | translate }}</h2>
+        <div>
+            <p>{{ 'imprint.Disclaimer' | translate }}</p>
+            <p>{{ 'imprint.links' | translate }}</p>
+            <p>{{ 'imprint.copyrights' | translate }}</p>
+            <p>{{ 'imprint.violations' | translate }}</p>
+        </div>
+
+        <h2>{{ 'imprint.credits' | translate }}</h2>
+        <div>
+            <p>{{ 'imprint.copyrightNotices' | translate }} </p>
+            <p>{{ 'imprint.photos' | translate }} von Christopher Hampel</p>
+
+            <p class="seal"><a href="https://datenschutz-generator.de/" title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken." target="_blank" rel="noopener noreferrer nofollow">{{ 'imprint.source' | translate }}</a></p>
+        </div>
+
     </article>
 
     <app-footer></app-footer>

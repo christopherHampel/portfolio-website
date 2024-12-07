@@ -17,7 +17,7 @@ export class FooterComponent {
   private translateService = inject(TranslateService);
 
   navigateTo(route: string): void {
-    this.router.navigate([route]); // Navigiert zu der übergebenen Route
+    this.router.navigate([route]);
+    window.scrollTo(0, 0);
   }
-
 }

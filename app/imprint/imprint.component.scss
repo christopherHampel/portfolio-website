@@ -1,12 +1,5 @@
 @import './../../styles.scss';
 
-app-footer {
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
-}
-
 div {
     padding: 0 96px;
 }
@@ -17,6 +10,7 @@ h3, h2 {
 
 p {
     @include styleFont('Karla', 16px, 400, 19.2px, #FFFF);
+    word-break: break-word;
 }
 
 a {
@@ -38,11 +32,7 @@ a {
     }
 }
 
-@media(max-height: 775px) {
-    app-footer {
-        position: unset;
-    }
-
+@media(max-height: 775px) { 
     article {
         padding-bottom: 40px;
     }

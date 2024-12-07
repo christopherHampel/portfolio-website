@@ -46,6 +46,12 @@
     }
 }
 
+@media(min-width: 1440px) {
+    .marquee {
+        border-radius: 30px;
+    }
+}
+
 @media(max-width: 500px) {
     .marquee-content {
         >span {

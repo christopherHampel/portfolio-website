@@ -2,7 +2,7 @@
 
 footer {
     width: 100%;
-    padding-bottom: 80px;
+    padding-bottom: 40px !important;
     >div {
         @include flexBox(row, space-between, center, 0);
     }

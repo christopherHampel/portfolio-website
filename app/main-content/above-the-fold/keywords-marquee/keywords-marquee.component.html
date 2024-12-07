@@ -1,17 +1,6 @@
 <div class="marquee">
 
-    <div class="marquee-content">
-        <span><img src="assets/img/radio_button_unchecked.png" alt=""></span>
-        <span>Frontend Developer</span>
-        <span><img src="assets/img/radio_button_unchecked.png" alt=""></span>
-        <span>{{ 'marquee.location' | translate }}</span>
-        <span><img src="assets/img/radio_button_unchecked.png" alt=""></span>
-        <span>{{ 'marquee.work' | translate }}</span>
-        <span><img src="assets/img/radio_button_unchecked.png" alt=""></span>
-        <span>{{ 'marquee.interestings' | translate }}</span>
-    </div>
-
-    <div class="marquee-content">
+    <div *ngFor="let item of [0, 1]" class="marquee-content">
         <span><img src="assets/img/radio_button_unchecked.png" alt=""></span>
         <span>Frontend Developer</span>
         <span><img src="assets/img/radio_button_unchecked.png" alt=""></span>

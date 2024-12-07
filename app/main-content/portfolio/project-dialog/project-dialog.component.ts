@@ -38,5 +38,7 @@ export class ProjectDialogComponent {
     this.skills = project.projectSkills;
     this.image = project.projectImage;
     this.description = project.projectDescription;
+    this.projectLink = project.projectLink;
+    this.githubLink = project.githubLink;
   }
 }
