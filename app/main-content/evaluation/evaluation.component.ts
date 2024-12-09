@@ -16,7 +16,6 @@ export class EvaluationComponent{
 
   private translationService = inject(InitTranslationServiceService);
 
-  // evaluations: {name:string; review:string; reviewKey:string}[] = [
   evaluations: EvaluationInterface[] = [
     {
       name: 'Kaloyan Ivanov',
@@ -59,28 +58,4 @@ export class EvaluationComponent{
   getPosition(index:number) {
     return this.positionsBoxes[index];
   }
-
-  // initializeTranslations() {
-  //   const translationSubscription = this.translateService.onLangChange.subscribe(() => {
-  //     this.updateTranslations();
-  //   });
-  //   this.updateTranslations();
-  //   this.subscription.add(translationSubscription);
-  // }
-
-  // updateTranslations() {
-  //   this.evaluations.forEach(evaluation => {
-  //     if (evaluation.reviewKey) {
-  //       this.translateService
-  //         .get(evaluation.reviewKey)
-  //         .subscribe(translation => {
-  //           evaluation.review = translation;
-  //         });
-  //     }
-  //   });
-  // }
-
-  // ngOnDestroy() {
-  //   this.subscription.unsubscribe();
-  // }
 }

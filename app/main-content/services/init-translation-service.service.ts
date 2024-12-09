@@ -39,15 +39,6 @@ export class InitTranslationServiceService {
         }
       });
     });
-    // currentProjects.forEach(project => {
-    //   if (project.key) {
-    //     this.translateService
-    //       .get(project.key)
-    //       .subscribe(translation => {
-    //         project.projectDescription = translation;
-    //     });
-    //   }
-    // });
   }
 
   ngOnDestroy() {
